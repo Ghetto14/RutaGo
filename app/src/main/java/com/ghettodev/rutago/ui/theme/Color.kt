@@ -23,3 +23,8 @@ val LightRed = Color(0xFFFEE2E2)
 
 val backgroundC = Color(0xFFF9FAFB)
 
+val backgroundAltaDemanda = Color(0xFFFFEBEE)
+
+val textAltaDemanda = Color(0xFFD32F2F)
+
+val fondoVerde = Color(0xFFE8F5E9)
