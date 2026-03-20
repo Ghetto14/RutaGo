@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.safeDrawingPadding  // ← IMPORTAR ES
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.ghettodev.rutago.ui.screens.HomeScreen
+import com.ghettodev.rutago.ui.screens.LoginScreen
 import com.ghettodev.rutago.ui.theme.RutaGoTheme
 
 class MainActivity : ComponentActivity() {
@@ -29,6 +30,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     //aqui llamar a la funcon composable
                     HomeScreen()
+                    LoginScreen()
                 }
             }
         }
