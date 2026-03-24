@@ -30,6 +30,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ghettodev.rutago.ui.components.cardRutasPopulares
 import com.ghettodev.rutago.ui.theme.PrimaryGreen
 import com.ghettodev.rutago.ui.theme.TextGray
 import com.ghettodev.rutago.ui.theme.backgroundC
@@ -50,6 +51,7 @@ fun HomeScreen() {
         Spacer(modifier = Modifier.height(35.dp))
         RutasTexto()
         Spacer(modifier = Modifier.height(20.dp))
+
     }
 
 }
