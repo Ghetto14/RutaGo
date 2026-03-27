@@ -37,11 +37,10 @@ val isStart = true
 
 @Preview
 @Composable
-fun itemParadas() {
+fun ItemParadas() {
     Row(
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 8.dp, vertical = 8.dp),
+            .fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
         //Columnas para dividir en derecha e izquierda

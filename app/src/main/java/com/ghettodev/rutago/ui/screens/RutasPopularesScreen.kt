@@ -30,127 +30,159 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ghettodev.rutago.ui.components.ItemParadas
+import com.ghettodev.rutago.ui.components.ProximoBus
 import com.ghettodev.rutago.ui.theme.PrimaryGreen
 import com.ghettodev.rutago.ui.theme.blur
 
 @Preview
 @Composable
-fun paradasPopulares(
+fun DetalleParada(
 
 ) {
-    Column() {
-        Box(
+    Box {
+        Column (
             modifier = Modifier
-                .fillMaxWidth()
-                .background(PrimaryGreen)
-                .wrapContentHeight()
-                .padding(
-                    horizontal = 15.dp,
-                    vertical = 15.dp
-                )
-        ) {
-            Column {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
+                .background(Color.White)
+        ){
+            Box(
+                modifier = Modifier
+                    .background(PrimaryGreen)
+                    .fillMaxWidth()
+                    .padding(
+                        horizontal = 15.dp,
+                        vertical = 25.dp
+                    )
 
-                    IconButton(
-                        onClick = {},
+            ) {
+                Column {
+
+                    Row(
                         modifier = Modifier
-                            .size(48.dp)
-                            .clip(RoundedCornerShape(12.dp))
-                            .background(blur)
+                            .fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
 
+                        IconButton(
+                            onClick = {},
+                            modifier = Modifier
+                                .size(48.dp)
+                                .clip(RoundedCornerShape(12.dp))
+                                .background(blur)
+
+                        ) {
+                            Icon(
+                                Icons.Default.ArrowBack,
+                                contentDescription = "Arrow back",
+                                tint = Color.White
+                            )
+                        }
+                        IconButton(
+                            onClick = {},
+                            modifier = Modifier
+                                .size(48.dp)
+                                .clip(RoundedCornerShape(12.dp))
+                                .background(blur)
+
+                        ) {
+                            Icon(//variable para indicar si es agregada a favoritas o no
+                                Icons.Default.Favorite,
+                                contentDescription = "favorite",
+                                tint = Color.White
+                            )
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.height(20.dp))
+
+                    Text(
+                        text = "Ruta 5",
+                        fontSize = 15.sp,
+                        color = Color.White,
+                        fontWeight = FontWeight.SemiBold,
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(15.dp))
+                            .background(blur)
+                            .padding(10.dp)
+                    )
+
+                    Spacer(modifier = Modifier.height(20.dp))
+
+                    Text(
+                        text = "Centro Historico - Terminal",
+                        fontSize = 28.sp,
+                        color = Color.White,
+                        fontWeight = FontWeight.SemiBold
+
+                    )
+
+                    Spacer(modifier = Modifier.height(20.dp))
+
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
                         Icon(
-                            Icons.Default.ArrowBack,
-                            contentDescription = "Arrow back",
-                            tint = Color.White
+                            Icons.Default.Schedule,
+                            contentDescription = "Icono reloj",
+                            tint = Color.White,
+                            modifier = Modifier
+                                .size(18.dp)
+                        )
+
+                        Spacer(modifier = Modifier.width(8.dp))
+
+                        Text(
+                            text = "45 min",
+                            fontSize = 18.sp,
+                            color = Color.White
+                        )
+
+                        Spacer(modifier = Modifier.width(25.dp))
+
+                        Icon(
+                            Icons.Default.LocationOn,
+                            contentDescription = "Location",
+                            tint = Color.White,
+                            modifier = Modifier
+                                .size(18.dp)
+                        )
+
+                        Spacer(modifier = Modifier.width(8.dp))
+
+                        Text(
+                            text = "10 Paradas",
+                            fontSize = 18.sp,
+                            color = Color.White
                         )
                     }
-                    IconButton(
-                        onClick = {},
-                        modifier = Modifier
-                            .size(48.dp)
-                            .clip(RoundedCornerShape(12.dp))
-                            .background(blur)
-
-                    ) {
-                        Icon(//variable para indicar si es agregada a favoritas o no
-                            Icons.Default.Favorite,
-                            contentDescription = "favorite",
-                            tint = Color.White
-                        )
-                    }
-                }
-
-                Spacer(modifier = Modifier.height(20.dp))
-
-                Text(
-                    text = "Ruta 5",
-                    fontSize = 15.sp,
-                    color = Color.White,
-                    fontWeight = FontWeight.SemiBold,
-                    modifier = Modifier
-                        .clip(RoundedCornerShape(15.dp))
-                        .background(blur)
-                        .padding(10.dp)
-                )
-
-                Spacer(modifier = Modifier.height(20.dp))
-
-                Text(
-                    text = "Centro Historico - Terminal",
-                    fontSize = 28.sp,
-                    color = Color.White,
-                    fontWeight = FontWeight.SemiBold
-
-                )
-
-                Spacer(modifier = Modifier.height(20.dp))
-
-                Row(
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Icon(
-                        Icons.Default.Schedule,
-                        contentDescription = "Icono reloj",
-                        tint = Color.White,
-                        modifier = Modifier
-                            .size(18.dp)
-                    )
-
-                    Spacer(modifier = Modifier.width(8.dp))
-
-                    Text(
-                        text = "45 min",
-                        fontSize = 18.sp,
-                        color = Color.White
-                    )
-
-                    Spacer(modifier = Modifier.width(25.dp))
-
-                    Icon(
-                        Icons.Default.LocationOn,
-                        contentDescription = "Location",
-                        tint = Color.White,
-                        modifier = Modifier
-                            .size(18.dp)
-                    )
-
-                    Spacer(modifier = Modifier.width(8.dp))
-
-                    Text(
-                        text = "10 Paradas",
-                        fontSize = 18.sp,
-                        color = Color.White
-                    )
                 }
             }
 
+            Spacer(modifier = Modifier
+                .height(50.dp)
+            )
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(Color.White)
+                    .wrapContentHeight()
+                    .padding(5.dp)
+            ) {
+                ItemParadas()
+            }
+
         }
+        Box(
+            modifier = Modifier
+                .align(Alignment.TopCenter)
+                .padding(top = 230.dp)
+                .padding(horizontal = 15.dp)
+
+        ){
+            ProximoBus()
+        }
+
     }
 }
