@@ -30,11 +30,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ghettodev.rutago.ui.theme.PrimaryGreen
 import com.ghettodev.rutago.ui.theme.TextGray
-/*
 import com.ghettodev.rutago.ui.theme.backgroundAltaDemanda
 import com.ghettodev.rutago.ui.theme.fondoVerde
 import com.ghettodev.rutago.ui.theme.textAltaDemanda
-
 
 @Preview
 @Composable
@@ -139,5 +137,3 @@ fun cardRutasPopulares(
         }
     }
 }
-
-*/
