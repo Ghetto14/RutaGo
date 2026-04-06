@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2026-03-19T06:45:16.771811743Z">
+        <DropdownSelection timestamp="2026-04-06T20:33:51.072050777Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=/home/jero/.android/avd/Pixel_9.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=/home/jero/.var/app/com.google.AndroidStudio/config/.android/avd/Medium_Phone.avd" />
             </handle>
           </Target>
         </DropdownSelection>
