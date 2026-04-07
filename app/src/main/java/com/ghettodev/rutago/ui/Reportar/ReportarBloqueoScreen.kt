@@ -46,7 +46,6 @@ fun ReportarBloqueoScreen(
             .background(Color(0xFFF5F5F5))
     ) {
 
-
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -92,7 +91,6 @@ fun ReportarBloqueoScreen(
                 Text(
                     text = "Tu reporte ayudará a otros usuarios a encontrar rutas alternativas",
                     fontSize = 13.sp,
-                    color = Color(0xFFF44336)
                 )
             }
 
@@ -188,7 +186,6 @@ fun ReportarBloqueoScreen(
 
             Spacer(modifier = Modifier.height(24.dp))
         }
-
 
         Column(
             modifier = Modifier
