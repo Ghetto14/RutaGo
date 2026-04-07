@@ -46,7 +46,6 @@ fun ReportarBloqueoScreen(
             .background(Color(0xFFF5F5F5))
     ) {
 
-        // TopBar
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -80,7 +79,6 @@ fun ReportarBloqueoScreen(
                 .padding(16.dp)
         ) {
 
-            // Banner informativo
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -93,13 +91,11 @@ fun ReportarBloqueoScreen(
                 Text(
                     text = "Tu reporte ayudará a otros usuarios a encontrar rutas alternativas",
                     fontSize = 13.sp,
-                    color = Color(0xFFD32F2F)
                 )
             }
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            // Tipo de bloqueo
             Text(
                 text = "Tipo de bloqueo",
                 fontSize = 16.sp,
@@ -140,7 +136,6 @@ fun ReportarBloqueoScreen(
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            // Ubicación
             Text(
                 text = "Ubicación",
                 fontSize = 16.sp,
@@ -166,7 +161,6 @@ fun ReportarBloqueoScreen(
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            // Descripción
             Text(
                 text = "Descripción (opcional)",
                 fontSize = 16.sp,
@@ -193,7 +187,6 @@ fun ReportarBloqueoScreen(
             Spacer(modifier = Modifier.height(24.dp))
         }
 
-        // Botones
         Column(
             modifier = Modifier
                 .fillMaxWidth()

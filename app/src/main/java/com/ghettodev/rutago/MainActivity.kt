@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.ghettodev.rutago.navigation.NavigationWrapper
+import com.ghettodev.rutago.ui.screens.HomeScreen
 import com.ghettodev.rutago.ui.theme.RutaGoTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,7 +27,7 @@ class MainActivity : ComponentActivity() {
                         .safeDrawingPadding()
                 ) {
                     //aqui llamar a la funcon composable
-                    NavigationWrapper()
+                    HomeScreen()
                 }
             }
         }

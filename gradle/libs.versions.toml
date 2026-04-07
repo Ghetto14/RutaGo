@@ -43,8 +43,6 @@ androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = 
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 androidx-navigation-compose = {module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose"}
 kotlinx-serialization-json = {module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinSerializationJson"}
-androidx-navigation-compose-extensible = {module = "androidx.navigation:navigation-compose-extensible", version.ref = "navigationComposerExtensible" }  # ← AGREGA ESTO
-
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
