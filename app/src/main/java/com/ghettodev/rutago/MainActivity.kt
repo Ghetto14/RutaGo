@@ -10,7 +10,11 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.ghettodev.rutago.ui.screens.HomeScreen
+<<<<<<< HEAD
 
+=======
+import com.ghettodev.rutago.ui.screens.LoginScreen
+>>>>>>> feature/login
 import com.ghettodev.rutago.ui.theme.RutaGoTheme
 
 class MainActivity : ComponentActivity() {
@@ -29,6 +33,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     //aqui llamar a la funcon composable
                     HomeScreen()
+                    LoginScreen()
                 }
             }
         }

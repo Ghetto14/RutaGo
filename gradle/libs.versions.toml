@@ -1,7 +1,13 @@
 [versions]
+<<<<<<< HEAD
 agp = "8.8.0"
 kotlin = "2.1.0"
 coreKtx = "1.15.0"
+=======
+agp = "9.1.0"
+kotlin = "2.2.10"
+coreKtx = "1.17.0"
+>>>>>>> feature/login
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
