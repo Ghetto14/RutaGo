@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -23,11 +24,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ghettodev.rutago.ui.components.cardRutasPopulares
 import com.ghettodev.rutago.ui.theme.PrimaryGreen
 import com.ghettodev.rutago.ui.theme.TextGray
 import com.ghettodev.rutago.ui.theme.backgroundC
@@ -47,6 +50,8 @@ fun HomeScreen() {
         ButtonAction()
         Spacer(modifier = Modifier.height(35.dp))
         RutasTexto()
+        Spacer(modifier = Modifier.height(20.dp))
+
     }
 
 }
@@ -131,7 +136,7 @@ fun RutasTexto() {
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
             .fillMaxWidth()
-            //.padding(16.dp)
+        //.padding(16.dp)
     ) {
         Text(
             text = "Rutas populares",
@@ -142,7 +147,7 @@ fun RutasTexto() {
 
         Text(
             modifier = Modifier
-                .clickable{},
+                .clickable {},
             text = "Ver todas",
             fontSize = 14.sp,
             color = PrimaryGreen
