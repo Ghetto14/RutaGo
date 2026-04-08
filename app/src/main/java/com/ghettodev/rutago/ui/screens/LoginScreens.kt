@@ -24,6 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ghettodev.rutago.R
+import com.ghettodev.rutago.domain.validator.AuthValidator
 import com.ghettodev.rutago.ui.theme.RutaGoTheme
 
 @Composable
@@ -34,6 +35,10 @@ fun LoginScreen(
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var passwordVisible by remember { mutableStateOf(false) }
+
+    val emailValido = AuthValidator.isValidEmail(email)
+    val passwordValida = AuthValidator.isValidPassword(password)
+    val formularioValido = emailValido && passwordValida
 
     Column(
         modifier = Modifier
@@ -60,6 +65,7 @@ fun LoginScreen(
             fontWeight = FontWeight.Bold,
             color = Color.Black
         )
+
         Text(
             text = "Llega rápido a tu destino",
             fontSize = 14.sp,
@@ -82,11 +88,25 @@ fun LoginScreen(
             singleLine = true,
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(12.dp),
+            isError = email.isNotEmpty() && !emailValido,
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = Color(0xFF34A853),
-                unfocusedBorderColor = Color(0xFF34A853)
+                unfocusedBorderColor = Color(0xFF34A853),
+                errorBorderColor = Color.Red,
+                errorLabelColor = Color.Red
             )
         )
+
+        if (email.isNotEmpty() && !emailValido) {
+            Text(
+                text = "Ingresa un correo válido",
+                color = Color.Red,
+                fontSize = 12.sp,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 4.dp, start = 4.dp)
+            )
+        }
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -103,11 +123,15 @@ fun LoginScreen(
             },
             trailingIcon = {
                 Icon(
-                    imageVector = if (passwordVisible) Icons.Default.Visibility
-                    else Icons.Default.VisibilityOff,
+                    imageVector = if (passwordVisible)
+                        Icons.Default.Visibility
+                    else
+                        Icons.Default.VisibilityOff,
                     contentDescription = "Mostrar contraseña",
                     tint = Color(0xFF34A853),
-                    modifier = Modifier.clickable { passwordVisible = !passwordVisible }
+                    modifier = Modifier.clickable {
+                        passwordVisible = !passwordVisible
+                    }
                 )
             },
             visualTransformation = if (passwordVisible)
@@ -117,26 +141,51 @@ fun LoginScreen(
             singleLine = true,
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(12.dp),
+            isError = password.isNotEmpty() && !passwordValida,
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = Color(0xFF34A853),
-                unfocusedBorderColor = Color(0xFF34A853)
+                unfocusedBorderColor = Color(0xFF34A853),
+                errorBorderColor = Color.Red,
+                errorLabelColor = Color.Red
             )
         )
+
+        if (password.isNotEmpty() && !passwordValida) {
+            Text(
+                text = "La contraseña debe tener al menos 6 caracteres",
+                color = Color.Red,
+                fontSize = 12.sp,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 4.dp, start = 4.dp)
+            )
+        }
 
         Spacer(modifier = Modifier.height(32.dp))
 
         Button(
-            onClick = { onLoginClick(email, password) },
+            onClick = {
+                if (formularioValido) {
+                    onLoginClick(email, password)
+                }
+            },
+            enabled = formularioValido,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(50.dp),
             shape = RoundedCornerShape(12.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color(0xFF34A853),
-                contentColor = Color.White
+                contentColor = Color.White,
+                disabledContainerColor = Color.LightGray,
+                disabledContentColor = Color.White
             )
         ) {
-            Text(text = "Iniciar sesión", fontSize = 16.sp, fontWeight = FontWeight.Bold)
+            Text(
+                text = "Iniciar sesión",
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold
+            )
         }
 
         Spacer(modifier = Modifier.height(16.dp))
