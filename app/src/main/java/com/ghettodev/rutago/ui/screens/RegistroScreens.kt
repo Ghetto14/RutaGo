@@ -66,6 +66,7 @@ fun RegisterScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+
         Image(
             painter = painterResource(id = R.drawable.rutago),
             contentDescription = "Logo RutaGo",
@@ -147,7 +148,7 @@ fun RegisterScreen(
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // CONFIRMAR CONTRASEÑA
+
         OutlinedTextField(
             value = confirmarPassword,
             onValueChange = { confirmarPassword = it },
@@ -175,7 +176,7 @@ fun RegisterScreen(
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // BOTÓN
+
         Button(
             onClick = { onRegisterClick(nombre, email, telefono, password) },
             enabled = formularioValido,

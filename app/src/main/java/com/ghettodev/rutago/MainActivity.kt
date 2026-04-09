@@ -8,11 +8,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.ghettodev.rutago.navigation.NavigationWrapper
-import com.ghettodev.rutago.ui.screens.HomeScreen
-import com.ghettodev.rutago.ui.screens.LoginScreen
+import com.ghettodev.rutago.ui.screens.RegisterScreen // Nombre corregido
 import com.ghettodev.rutago.ui.theme.RutaGoTheme
-import com.ghettodev.rutago.ui.screens.RegisterScreen
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,12 +25,10 @@ class MainActivity : ComponentActivity() {
                 ) {
                     RegisterScreen(
                         onRegisterClick = { nombre, email, telefono, pass ->
-
-                            println("Registrando a: $nombre con tel: $telefono")
+                            println("Datos: $nombre, $email, $telefono")
                         },
                         onLoginClick = {
-                            // Aquí programarías que regrese al Login
-                            println("Navegar al Login")
+                            // Lógica para volver
                         }
                     )
                 }
@@ -40,6 +36,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-
-
