@@ -14,3 +14,5 @@ object ERutasS
 object RutasPopulares
 @Serializable
 object Registro
+@Serializable
+object Reporte

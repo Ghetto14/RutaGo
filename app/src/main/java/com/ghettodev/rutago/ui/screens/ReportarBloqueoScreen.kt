@@ -26,7 +26,7 @@ data class TipoBloqueo(
 @Composable
 fun ReportarBloqueoScreen(
     onCancelar: () -> Unit = {},
-    onEnviar: (String, String, String) -> Unit = { _, _, _ -> }
+    onEnviar: () -> Unit = {}
 ) {
     var tipoSeleccionado by remember { mutableStateOf("") }
     var ubicacion by remember { mutableStateOf("") }
@@ -194,7 +194,7 @@ fun ReportarBloqueoScreen(
                 .padding(16.dp)
         ) {
             Button(
-                onClick = { onEnviar(tipoSeleccionado, ubicacion, descripcion) },
+                onClick = { onEnviar() },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp),
@@ -215,7 +215,9 @@ fun ReportarBloqueoScreen(
             Spacer(modifier = Modifier.height(8.dp))
 
             OutlinedButton(
-                onClick = onCancelar,
+                onClick = {
+                    onCancelar()
+                },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp),

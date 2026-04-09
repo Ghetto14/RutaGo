@@ -4,12 +4,12 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.ghettodev.rutago.ui.screens.ButtonAction
 import com.ghettodev.rutago.ui.screens.DetalleParada
 import com.ghettodev.rutago.ui.screens.ERutasS
 import com.ghettodev.rutago.ui.screens.HomeScreen
 import com.ghettodev.rutago.ui.screens.LoginScreen
 import com.ghettodev.rutago.ui.screens.RegisterScreen
+import com.ghettodev.rutago.ui.screens.ReportarBloqueoScreen
 
 @Composable
 fun NavigationWrapper(){
@@ -42,7 +42,11 @@ fun NavigationWrapper(){
         }
 
         composable <ERutasS>{//espera objeto erutass
-            ERutasS()//composable a mostrar
+            ERutasS(//composable a mostrar
+                onReporteClic = {
+                    navController.navigate(Reporte)
+                }
+            )
         }
 
         composable<RutasPopulares>{
@@ -56,6 +60,14 @@ fun NavigationWrapper(){
         composable <Registro>{
             RegisterScreen(
                 onBack = {
+                    navController.popBackStack()
+                }
+            )
+        }
+
+        composable<Reporte>{
+            ReportarBloqueoScreen(
+                onCancelar = {
                     navController.popBackStack()
                 }
             )

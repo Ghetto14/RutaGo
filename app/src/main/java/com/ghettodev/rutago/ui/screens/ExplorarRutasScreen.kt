@@ -32,7 +32,9 @@ import com.ghettodev.rutago.ui.components.MapItem
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
-fun ERutasS()
+fun ERutasS(
+    onReporteClic: () -> Unit = {}
+)
 {
     //atributos o variables de la clase
     var text by remember { mutableStateOf("") }
@@ -82,7 +84,7 @@ fun ERutasS()
         }
         FloatingActionButton(
             onClick = {
-
+                onReporteClic()
             },
             modifier = Modifier
                 .align(Alignment.BottomEnd)
