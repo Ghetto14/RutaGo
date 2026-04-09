@@ -2,7 +2,6 @@ package com.ghettodev.rutago.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -24,17 +23,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ghettodev.rutago.R
 import com.ghettodev.rutago.domain.validator.AuthValidator
-import com.ghettodev.rutago.ui.theme.RutaGoTheme
 
 @Composable
 fun RegisterScreen(
     onRegisterClick: (String, String, String, String) -> Unit = { _, _, _, _ -> },
-    onLoginClick: () -> Unit = {}
+    onBack: () -> Unit = {},
+
 ) {
     var nombre by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
@@ -192,7 +190,9 @@ fun RegisterScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        TextButton(onClick = onLoginClick) {
+        TextButton(onClick = {
+            onBack()
+        }) {
             Text("¿Ya tienes cuenta? Inicia sesión", color = colorPrimario)
         }
     }

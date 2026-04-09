@@ -20,7 +20,7 @@ fun NavigationWrapper(){
         //pantalla login
         composable<Login>{//espera el objeto Login
             LoginScreen (//composable a mostrar
-                onLoginClick = {
+                onLoginClick = { email, password ->
                     navController.navigate(Main)//navegar al objeto main
                 },
                 onRegistroClick = {

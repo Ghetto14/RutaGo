@@ -24,13 +24,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ghettodev.rutago.domain.validator.AuthValidator
-import com.ghettodev.rutago.ui.theme.RutaGoTheme
 import com.ghettodev.rutago.R
+
 
 @Composable
 fun LoginScreen(
     onLoginClick: (String, String) -> Unit = { _, _ -> },
-    onRegisterClick: () -> Unit = {}
+    onRegistroClick: () -> Unit ={}
 ) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -190,7 +190,7 @@ fun LoginScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        TextButton(onClick = onRegisterClick) {
+        TextButton(onClick = onRegistroClick) {
             Text(
                 text = "¿No tienes cuenta? Regístrate",
                 color = Color(0xFF34A853)
