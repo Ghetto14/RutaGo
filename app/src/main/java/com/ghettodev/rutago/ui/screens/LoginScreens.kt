@@ -28,8 +28,8 @@ import com.ghettodev.rutago.ui.theme.RutaGoTheme
 
 @Composable
 fun LoginScreen(
-    onLoginClick: (String, String) -> Unit = { _, _ -> },
-    onRegisterClick: () -> Unit = {}
+    onLoginClick: () -> Unit = {},
+    onRegistroClick: () -> Unit = {}
 ) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -71,7 +71,7 @@ fun LoginScreen(
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
-            label = { Text("Correo electrónico") },
+            label = { Text("Correo electrónico")},
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Default.Email,
@@ -126,7 +126,9 @@ fun LoginScreen(
         Spacer(modifier = Modifier.height(32.dp))
 
         Button(
-            onClick = { onLoginClick(email, password) },
+            onClick = {
+                onLoginClick()
+            },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(50.dp),
@@ -141,8 +143,13 @@ fun LoginScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        TextButton(onClick = onRegisterClick) {
+        TextButton(onClick = {
+            //onRegisterClick()
+        }) {
             Text(
+                modifier = Modifier.clickable{
+                    onRegistroClick()
+                },
                 text = "¿No tienes cuenta? Regístrate",
                 color = Color(0xFF34A853)
             )

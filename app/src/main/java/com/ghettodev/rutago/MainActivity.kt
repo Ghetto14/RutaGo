@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
                         .safeDrawingPadding()
                 ) {
                     //aqui llamar a la funcon composable
-                    HomeScreen()
+                    NavigationWrapper()
                 }
             }
         }

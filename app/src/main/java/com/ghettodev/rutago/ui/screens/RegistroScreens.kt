@@ -31,8 +31,9 @@ import com.ghettodev.rutago.ui.theme.RutaGoTheme
 
 @Composable
 fun RegisterScreen(
-    onRegisterClick: (String, String, String, String) -> Unit = { _, _, _, _ -> },
-    onLoginClick: () -> Unit = {}
+    onRegisterClick: () -> Unit = {},
+    onLoginClick: () -> Unit = {},
+    onBack: () -> Unit = {}
 ) {
     var nombre by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
@@ -78,7 +79,7 @@ fun RegisterScreen(
         OutlinedTextField(
             value = nombre,
             onValueChange = { nombre = it },
-            label = { Text("Nombre completo") },
+            label = { Text("Nombre de Usuario") },
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Default.Person,
@@ -190,7 +191,7 @@ fun RegisterScreen(
         Spacer(modifier = Modifier.height(32.dp))
 
         Button(
-            onClick = { onRegisterClick(nombre, email, password, confirmarPassword) },
+            onClick = { onRegisterClick() },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(50.dp),
@@ -205,8 +206,15 @@ fun RegisterScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        TextButton(onClick = onLoginClick) {
+        TextButton(onClick = {
+            onBack()
+        }
+        ) {
             Text(
+                modifier = Modifier
+                    .clickable{
+                        onBack()
+                    },
                 text = "¿Ya tienes cuenta? Inicia sesión",
                 color = Color(0xFF34A853)
             )

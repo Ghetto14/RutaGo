@@ -38,7 +38,10 @@ import com.ghettodev.rutago.ui.theme.backgroundC
 
 @Preview
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    onExplorarRutas:() -> Unit = {},
+    onVerTodas:() -> Unit = {}
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -47,9 +50,17 @@ fun HomeScreen() {
     ) {
         Saludo()
         Spacer(modifier = Modifier.height(24.dp))
-        ButtonAction()
+        ButtonAction(
+            onExplorarRutas = {
+                onExplorarRutas()
+            }
+        )
         Spacer(modifier = Modifier.height(35.dp))
-        RutasTexto()
+        RutasTexto(
+            onVerTodas = {
+                onVerTodas()
+            }
+        )
         Spacer(modifier = Modifier.height(20.dp))
 
     }
@@ -75,10 +86,14 @@ fun Saludo() {
 }
 
 @Composable
-fun ButtonAction() {
+fun ButtonAction(
+    onExplorarRutas:() -> Unit = {}
+) {
     //boton explorar rutas
     Button(
-        onClick = {},
+        onClick = {
+            onExplorarRutas()
+        },
         modifier = Modifier
             .fillMaxWidth()
             .height(56.dp),
@@ -130,7 +145,9 @@ fun ButtonAction() {
 }
 
 @Composable
-fun RutasTexto() {
+fun RutasTexto(
+    onVerTodas: () -> Unit
+) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
@@ -147,7 +164,9 @@ fun RutasTexto() {
 
         Text(
             modifier = Modifier
-                .clickable {},
+                .clickable {
+                    onVerTodas()
+                },
             text = "Ver todas",
             fontSize = 14.sp,
             color = PrimaryGreen

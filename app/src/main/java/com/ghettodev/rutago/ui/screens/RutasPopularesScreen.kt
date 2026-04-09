@@ -38,7 +38,7 @@ import com.ghettodev.rutago.ui.theme.blur
 @Preview
 @Composable
 fun DetalleParada(
-
+    onBack: () -> Unit = {}
 ) {
     Box {
         Column (
@@ -65,7 +65,9 @@ fun DetalleParada(
                     ) {
 
                         IconButton(
-                            onClick = {},
+                            onClick = {
+                                onBack()
+                            },
                             modifier = Modifier
                                 .size(48.dp)
                                 .clip(RoundedCornerShape(12.dp))
@@ -170,7 +172,18 @@ fun DetalleParada(
                     .wrapContentHeight()
                     .padding(5.dp)
             ) {
-                ItemParadas()
+                Spacer(modifier = Modifier
+                .padding(top = 50.dp)
+                )
+                Column() {
+                    ItemParadas()
+                    Spacer(modifier = Modifier
+                        .height(10.dp)
+                    )
+                    ItemParadas()
+                }
+
+
             }
 
         }

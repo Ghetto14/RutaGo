@@ -28,7 +28,8 @@ import com.ghettodev.rutago.ui.components.MapItem
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
-fun ParadasCercanas(){
+fun ERutasS()
+{
     //atributos o variables de la clase
     var text by remember { mutableStateOf("") }
     var active by remember { mutableStateOf(false) }
