@@ -23,9 +23,9 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ghettodev.rutago.R
 import com.ghettodev.rutago.domain.validator.AuthValidator
 import com.ghettodev.rutago.ui.theme.RutaGoTheme
+import com.ghettodev.rutago.R
 
 @Composable
 fun LoginScreen(
@@ -49,7 +49,7 @@ fun LoginScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        Image(
+           Image(
             painter = painterResource(id = R.drawable.rutago),
             contentDescription = "Logo RutaGo",
             modifier = Modifier
@@ -196,13 +196,5 @@ fun LoginScreen(
                 color = Color(0xFF34A853)
             )
         }
-    }
-}
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun LoginScreenPreview() {
-    RutaGoTheme {
-        LoginScreen()
     }
 }

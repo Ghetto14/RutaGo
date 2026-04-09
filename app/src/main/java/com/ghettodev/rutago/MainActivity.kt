@@ -10,12 +10,11 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.ghettodev.rutago.navigation.NavigationWrapper
 import com.ghettodev.rutago.ui.screens.HomeScreen
+import com.ghettodev.rutago.ui.screens.LoginScreen
 import com.ghettodev.rutago.ui.theme.RutaGoTheme
-
+import com.ghettodev.rutago.ui.screens.RegisterScreen
 class MainActivity : ComponentActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
@@ -26,11 +25,21 @@ class MainActivity : ComponentActivity() {
                         .fillMaxSize()
                         .safeDrawingPadding()
                 ) {
-                    //aqui llamar a la funcon composable
-                    HomeScreen()
+                    RegisterScreen(
+                        onRegisterClick = { nombre, email, telefono, pass ->
+
+                            println("Registrando a: $nombre con tel: $telefono")
+                        },
+                        onLoginClick = {
+                            // Aquí programarías que regrese al Login
+                            println("Navegar al Login")
+                        }
+                    )
                 }
             }
         }
     }
-
 }
+
+
+
