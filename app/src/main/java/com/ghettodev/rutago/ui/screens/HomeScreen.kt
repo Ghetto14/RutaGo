@@ -133,7 +133,7 @@ fun ButtonAction(
             modifier = Modifier
                 .height(24.dp)
         )
-        Spacer(modifier = Modifier.width(8.dp))  // Espacio entre icono y texto
+        Spacer(modifier = Modifier.width(8.dp))
         Text(
             text = "Ver rutas cercanas",
             fontSize = 16.sp,
