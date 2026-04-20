@@ -1,77 +1,49 @@
 package com.ghettodev.rutago.navigation
 
+import android.widget.Toast
 import androidx.compose.runtime.Composable
-import androidx.navigation.compose.composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.ghettodev.rutago.ui.screens.DetalleParada
-import com.ghettodev.rutago.ui.screens.ERutasS
-import com.ghettodev.rutago.ui.screens.HomeScreen
 import com.ghettodev.rutago.ui.screens.LoginScreen
 import com.ghettodev.rutago.ui.screens.RegisterScreen
-import com.ghettodev.rutago.ui.screens.ReportarBloqueoScreen
+import com.ghettodev.rutago.ui.screens.HomeScreen
+// Asegúrate de que estos objetos se importen de tu archivo ScreenObjects
+import com.ghettodev.rutago.navigation.Login
+import com.ghettodev.rutago.navigation.Registro
+import com.ghettodev.rutago.navigation.Main
 
 @Composable
-fun NavigationWrapper(){
-    //craer objeto para la navegacion
+fun NavigationWrapper() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = Login) {
+    val context = LocalContext.current
 
-        //pantalla login
-        composable<Login>{//espera el objeto Login
-            LoginScreen (//composable a mostrar
-                onLoginClick = {
-                    navController.navigate(Main)//navegar al objeto main
+    NavHost(navController = navController, startDestination = Login) {
+        composable<Login> {
+            LoginScreen(
+                onLoginClick = { email, pass ->
+                    navController.navigate(Main)
                 },
-                onRegistroClick = {
+                onRegisterClick = {
                     navController.navigate(Registro)
                 }
             )
         }
 
-        //pantalla main
-        composable<Main>{//espera objeto main
-            HomeScreen(//composable a mostrar
-                onExplorarRutas = {
-                    navController.navigate(ERutasS)//navegar a erutass
-                },
-                onVerTodas = {
-                    navController.navigate(RutasPopulares)
-                }
-            )
-        }
-
-        composable <ERutasS>{//espera objeto erutass
-            ERutasS(//composable a mostrar
-                onReporteClic = {
-                    navController.navigate(Reporte)
-                }
-            )
-        }
-
-        composable<RutasPopulares>{
-            DetalleParada(
-                onBack = {
-                    navController.popBackStack()
-                }
-            )
-        }
-
-        composable <Registro>{
+        composable<Registro> {
             RegisterScreen(
-                onBack = {
+                onLoginClick = {
                     navController.popBackStack()
+                },
+                onRegisterClick = { n, e, t, p ->
+                    navController.navigate(Login)
                 }
             )
         }
 
-        composable<Reporte>{
-            ReportarBloqueoScreen(
-                onCancelar = {
-                    navController.popBackStack()
-                }
-            )
+        composable<Main> {
+            HomeScreen()
         }
-
     }
 }
