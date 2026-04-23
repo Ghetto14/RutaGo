@@ -1,9 +1,11 @@
 package com.ghettodev.rutago.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.ghettodev.rutago.data.location.LocationService
 import com.ghettodev.rutago.ui.screens.DetalleParada
 import com.ghettodev.rutago.ui.screens.ERutasS
 import com.ghettodev.rutago.ui.screens.HomeScreen
@@ -41,8 +43,12 @@ fun NavigationWrapper(){
             )
         }
 
-        composable <ERutasS>{//espera objeto erutass
-            ERutasS(//composable a mostrar
+        // NavigationWrapper.kt
+        composable<ERutasS> {
+            val context = LocalContext.current
+
+            ERutasS(
+                locationService = LocationService(context),
                 onReporteClic = {
                     navController.navigate(Reporte)
                 }

@@ -66,6 +66,11 @@ dependencies {
     // MapLibre
     implementation(libs.maplibre.compose)
     implementation(libs.maplibre.compose.material3)
+    // Para pedir permisos en runtime
+    implementation("androidx.activity:activity-compose:1.9.0")
+    // Para acceder a ubicación del dispositivo
+    implementation("com.google.android.gms:play-services-location:21.1.0")
+
 
     // Navigation (Type-Safe)
     implementation(libs.androidx.navigation.compose)
@@ -86,4 +91,12 @@ dependencies {
     // Debug
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    // Para convertir Tasks a Corrutinas (suspend)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.8.1")
+
+    // Si aún no lo tienes:
+    implementation("com.google.android.gms:play-services-location:21.1.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+
 }
