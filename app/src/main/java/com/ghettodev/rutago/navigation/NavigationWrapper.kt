@@ -1,29 +1,43 @@
 package com.ghettodev.rutago.navigation
 
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.platform.LocalContext
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.rememberNavController
+import androidx.navigation.compose.*
+
 import com.ghettodev.rutago.data.location.LocationService
-import com.ghettodev.rutago.ui.screens.DetalleParada
-import com.ghettodev.rutago.ui.screens.ERutasS
-import com.ghettodev.rutago.ui.screens.HomeScreen
-import com.ghettodev.rutago.ui.screens.LoginScreen
-import com.ghettodev.rutago.ui.screens.RegisterScreen
-import com.ghettodev.rutago.ui.screens.ReportarBloqueoScreen
+import com.ghettodev.rutago.data.repository.RutaRepository
+import com.ghettodev.rutago.data.database.AppDatabase // 👈 AJUSTA NOMBRE SI ES DISTINTO
+
+import com.ghettodev.rutago.ui.screens.*
 
 @Composable
 fun NavigationWrapper(){
-    //craer objeto para la navegacion
-    val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = Login) {
 
-        //pantalla login
-        composable<Login>{//espera el objeto Login
-            LoginScreen (//composable a mostrar
-                onLoginClick = { email, password ->
-                    navController.navigate(Main)//navegar al objeto main
+    val navController = rememberNavController()
+    val context = LocalContext.current
+
+    // 🔥 Instancia de la DB
+    val db = AppDatabase.getDatabase(context) // 👈 o getInstance()
+
+    // 🔥 Repository con TUS DAOs
+    val rutaRepository = remember {
+        RutaRepository(
+            rutaDao = db.rutaDao(),
+            paradaDao = db.paradaDao(),
+            rutaParadaDao = db.rutaParadaDao(),
+            context = context
+        )
+    }
+
+    NavHost(
+        navController = navController,
+        startDestination = Login
+    ) {
+
+        composable<Login>{
+            LoginScreen(
+                onLoginClick = { _, _ ->
+                    navController.navigate(Main)
                 },
                 onRegistroClick = {
                     navController.navigate(Registro)
@@ -31,11 +45,10 @@ fun NavigationWrapper(){
             )
         }
 
-        //pantalla main
-        composable<Main>{//espera objeto main
-            HomeScreen(//composable a mostrar
+        composable<Main>{
+            HomeScreen(
                 onExplorarRutas = {
-                    navController.navigate(ERutasS)//navegar a erutass
+                    navController.navigate(ERutasS)
                 },
                 onVerTodas = {
                     navController.navigate(RutasPopulares)
@@ -43,12 +56,11 @@ fun NavigationWrapper(){
             )
         }
 
-        // NavigationWrapper.kt
         composable<ERutasS> {
-            val context = LocalContext.current
 
             ERutasS(
                 locationService = LocationService(context),
+                rutaRepository = rutaRepository, // ✅ AQUÍ SE PASA
                 onReporteClic = {
                     navController.navigate(Reporte)
                 }
@@ -63,7 +75,7 @@ fun NavigationWrapper(){
             )
         }
 
-        composable <Registro>{
+        composable<Registro>{
             RegisterScreen(
                 onBack = {
                     navController.popBackStack()
@@ -78,6 +90,5 @@ fun NavigationWrapper(){
                 }
             )
         }
-
     }
 }

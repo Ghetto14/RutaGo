@@ -7,11 +7,11 @@ import androidx.room.Query
 import com.ghettodev.rutago.data.entity.Parada
 
 @Dao
-interface ParadaDao {
+interface ParadaDaokajdfla {
 
     // ✅ INSERT - Insertar una parada
     @Insert
-    suspend fun insertarParada(parada: Parada): Long
+    suspend fun insertParada(parada: Parada): Long  // ← Cambié de insertarParada
 
     // ✅ INSERT MULTIPLE - Insertar muchas paradas
     @Insert

@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.compose.foundation.layout)
     implementation("androidx.compose.material:material-icons-extended:1.7.0")
+    implementation(libs.androidx.ui)
 
     // MapLibre
     implementation(libs.maplibre.compose)
