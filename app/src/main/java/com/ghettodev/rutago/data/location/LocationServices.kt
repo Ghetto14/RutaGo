@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
+import android.util.Log
 import androidx.core.content.ContextCompat
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -17,7 +18,6 @@ class LocationService(private val context: Context) {
     private val fusedLocationClient: FusedLocationProviderClient =
         LocationServices.getFusedLocationProviderClient(context)
 
-    // Comprueba si la app tiene permisos otorgados
     private fun hasLocationPermission(): Boolean {
         return ContextCompat.checkSelfPermission(
             context,
@@ -25,15 +25,23 @@ class LocationService(private val context: Context) {
         ) == PackageManager.PERMISSION_GRANTED
     }
 
-    // Obtiene la ubicación actual del dispositivo
     suspend fun getCurrentLocation(): Location? {
-        // Primero verifica que tiene permiso
         if (!hasLocationPermission()) {
-            return null // Sin permiso, no hace nada
+            Log.d("UBICACION", "Sin permiso")
+            return null
         }
 
         return try {
-            fusedLocationClient.getCurrentLocation(
+            // Primero intenta la última ubicación conocida
+            val lastLocation = fusedLocationClient.lastLocation.await()
+            if (lastLocation != null) {
+                Log.d("UBICACION", "Última ubicación: ${lastLocation.latitude}, ${lastLocation.longitude}")
+                return lastLocation
+            }
+
+            // Si no hay última ubicación, pide una nueva
+            Log.d("UBICACION", "Pidiendo ubicación nueva...")
+            val newLocation = fusedLocationClient.getCurrentLocation(
                 Priority.PRIORITY_HIGH_ACCURACY,
                 object : CancellationToken() {
                     override fun onCanceledRequested(
@@ -42,13 +50,16 @@ class LocationService(private val context: Context) {
                         callback.onCanceled()
                         return this
                     }
-
                     override fun isCancellationRequested(): Boolean = false
                 }
-            ).await() // ← Aquí está el await() de kotlinx-coroutines-play-services
+            ).await()
+            Log.d("UBICACION", "Nueva ubicación: ${newLocation?.latitude}, ${newLocation?.longitude}")
+            newLocation
         } catch (e: SecurityException) {
+            Log.d("UBICACION", "Error seguridad: ${e.message}")
             null
         } catch (e: Exception) {
+            Log.d("UBICACION", "Error: ${e.message}")
             null
         }
     }
