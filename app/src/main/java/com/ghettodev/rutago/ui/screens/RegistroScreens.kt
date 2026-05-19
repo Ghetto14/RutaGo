@@ -21,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -28,13 +29,23 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ghettodev.rutago.R
+import com.ghettodev.rutago.data.AppDatabase
+import com.ghettodev.rutago.data.entity.Usuario
 import com.ghettodev.rutago.domain.validator.AuthValidator
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @Composable
 fun RegisterScreen(
     onRegisterClick: (String, String, String, String) -> Unit = { _, _, _, _ -> },
-    onBack: () -> Unit = {},
+    onBack: () -> Unit = {}
 ) {
+
+    val context = LocalContext.current
+    val db = AppDatabase.getDatabase(context)
+    val usuarioDao = db.usuarioDao()
+
     var nombre by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var telefono by remember { mutableStateOf("") }
@@ -44,18 +55,20 @@ fun RegisterScreen(
     var passwordVisible by remember { mutableStateOf(false) }
     var confirmarPasswordVisible by remember { mutableStateOf(false) }
 
-    // 🔹 Contexto para Toast
-    val context = LocalContext.current
-
-    // Lógica de validación
     val isNombreValido = AuthValidator.isValidName(nombre)
     val isEmailValido = AuthValidator.isValidEmail(email)
     val isTelefonoValido = AuthValidator.isValidPhone(telefono)
     val isPasswordValido = AuthValidator.isValidPassword(password)
-    val lasContrasenasCoinciden = password == confirmarPassword && password.isNotEmpty()
 
-    val formularioValido = isNombreValido && isEmailValido &&
-            isTelefonoValido && isPasswordValido && lasContrasenasCoinciden
+    val lasContrasenasCoinciden =
+        password == confirmarPassword && password.isNotEmpty()
+
+    val formularioValido =
+        isNombreValido &&
+                isEmailValido &&
+                isTelefonoValido &&
+                isPasswordValido &&
+                lasContrasenasCoinciden
 
     val colorPrimario = Color(0xFF34A853)
 
@@ -79,17 +92,27 @@ fun RegisterScreen(
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        Text("Crear cuenta", fontSize = 28.sp, fontWeight = FontWeight.Bold)
-        Text("Regístrate para continuar", fontSize = 14.sp, color = Color.Gray)
+        Text(
+            "Crear cuenta",
+            fontSize = 28.sp,
+            fontWeight = FontWeight.Bold
+        )
+
+        Text(
+            "Regístrate para continuar",
+            fontSize = 14.sp,
+            color = Color.Gray
+        )
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        //nombre
         OutlinedTextField(
             value = nombre,
             onValueChange = { nombre = it },
             label = { Text("Nombre completo") },
-            leadingIcon = { Icon(Icons.Default.Person, null, tint = colorPrimario) },
+            leadingIcon = {
+                Icon(Icons.Default.Person, null, tint = colorPrimario)
+            },
             modifier = Modifier.fillMaxWidth(),
             isError = nombre.isNotEmpty() && !isNombreValido,
             shape = RoundedCornerShape(12.dp),
@@ -98,12 +121,13 @@ fun RegisterScreen(
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // EMAIL
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
             label = { Text("Correo electrónico") },
-            leadingIcon = { Icon(Icons.Default.Email, null, tint = colorPrimario) },
+            leadingIcon = {
+                Icon(Icons.Default.Email, null, tint = colorPrimario)
+            },
             modifier = Modifier.fillMaxWidth(),
             isError = email.isNotEmpty() && !isEmailValido,
             shape = RoundedCornerShape(12.dp),
@@ -112,12 +136,15 @@ fun RegisterScreen(
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // TELÉFONO
         OutlinedTextField(
             value = telefono,
-            onValueChange = { if (it.length <= 10) telefono = it },
+            onValueChange = {
+                if (it.length <= 10) telefono = it
+            },
             label = { Text("Teléfono (10 dígitos)") },
-            leadingIcon = { Icon(Icons.Default.Phone, null, tint = colorPrimario) },
+            leadingIcon = {
+                Icon(Icons.Default.Phone, null, tint = colorPrimario)
+            },
             modifier = Modifier.fillMaxWidth(),
             isError = telefono.isNotEmpty() && !isTelefonoValido,
             shape = RoundedCornerShape(12.dp),
@@ -126,22 +153,35 @@ fun RegisterScreen(
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // CONTRASEÑA
         OutlinedTextField(
             value = password,
             onValueChange = { password = it },
             label = { Text("Contraseña") },
-            leadingIcon = { Icon(Icons.Default.Lock, null, tint = colorPrimario) },
+            leadingIcon = {
+                Icon(Icons.Default.Lock, null, tint = colorPrimario)
+            },
             trailingIcon = {
-                IconButton(onClick = { passwordVisible = !passwordVisible }) {
+                IconButton(
+                    onClick = {
+                        passwordVisible = !passwordVisible
+                    }
+                ) {
                     Icon(
-                        imageVector = if (passwordVisible) Icons.Default.Visibility else Icons.Default.VisibilityOff,
+                        imageVector =
+                            if (passwordVisible)
+                                Icons.Default.Visibility
+                            else
+                                Icons.Default.VisibilityOff,
                         contentDescription = null,
                         tint = colorPrimario
                     )
                 }
             },
-            visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+            visualTransformation =
+                if (passwordVisible)
+                    VisualTransformation.None
+                else
+                    PasswordVisualTransformation(),
             modifier = Modifier.fillMaxWidth(),
             isError = password.isNotEmpty() && !isPasswordValido,
             shape = RoundedCornerShape(12.dp),
@@ -154,24 +194,43 @@ fun RegisterScreen(
             value = confirmarPassword,
             onValueChange = { confirmarPassword = it },
             label = { Text("Confirmar contraseña") },
-            leadingIcon = { Icon(Icons.Default.Lock, null, tint = colorPrimario) },
+            leadingIcon = {
+                Icon(Icons.Default.Lock, null, tint = colorPrimario)
+            },
             trailingIcon = {
-                IconButton(onClick = { confirmarPasswordVisible = !confirmarPasswordVisible }) {
+                IconButton(
+                    onClick = {
+                        confirmarPasswordVisible =
+                            !confirmarPasswordVisible
+                    }
+                ) {
                     Icon(
-                        imageVector = if (confirmarPasswordVisible) Icons.Default.Visibility else Icons.Default.VisibilityOff,
+                        imageVector =
+                            if (confirmarPasswordVisible)
+                                Icons.Default.Visibility
+                            else
+                                Icons.Default.VisibilityOff,
                         contentDescription = null,
                         tint = colorPrimario
                     )
                 }
             },
-            visualTransformation = if (confirmarPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+            visualTransformation =
+                if (confirmarPasswordVisible)
+                    VisualTransformation.None
+                else
+                    PasswordVisualTransformation(),
             modifier = Modifier.fillMaxWidth(),
-            isError = confirmarPassword.isNotEmpty() && !lasContrasenasCoinciden,
+            isError = confirmarPassword.isNotEmpty() &&
+                    !lasContrasenasCoinciden,
             shape = RoundedCornerShape(12.dp),
             singleLine = true
         )
 
-        if (confirmarPassword.isNotEmpty() && !lasContrasenasCoinciden) {
+        if (confirmarPassword.isNotEmpty() &&
+            !lasContrasenasCoinciden
+        ) {
+
             Text(
                 "Las contraseñas no coinciden",
                 color = Color.Red,
@@ -184,17 +243,34 @@ fun RegisterScreen(
 
         Button(
             onClick = {
-                onRegisterClick(nombre, email, telefono, password)
 
-                // 🔹 Toast de éxito
-                Toast.makeText(context, "Usuario creado con éxito", Toast.LENGTH_SHORT).show()
+                CoroutineScope(Dispatchers.IO).launch {
 
-                // 🔹 Limpiar campos
-                nombre = ""
-                email = ""
-                telefono = ""
-                password = ""
-                confirmarPassword = ""
+                    usuarioDao.insertar(
+                        Usuario(
+                            nombreUsuario = nombre,
+                            correo = email,
+                            telefono = telefono,
+                            password = password
+                        )
+                    )
+
+                    launch(Dispatchers.Main) {
+
+                        Toast.makeText(
+                            context,
+                            "Usuario registrado correctamente",
+                            Toast.LENGTH_SHORT
+                        ).show()
+
+                        onRegisterClick(
+                            nombre,
+                            email,
+                            telefono,
+                            password
+                        )
+                    }
+                }
             },
             enabled = formularioValido,
             modifier = Modifier
@@ -206,15 +282,26 @@ fun RegisterScreen(
                 disabledContainerColor = Color.LightGray
             )
         ) {
-            Text("Registrarse", fontSize = 16.sp, fontWeight = FontWeight.Bold)
+
+            Text(
+                "Registrarse",
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold
+            )
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        TextButton(onClick = {
-            onBack()
-        }) {
-            Text("¿Ya tienes cuenta? Inicia sesión", color = colorPrimario)
+        TextButton(
+            onClick = {
+                onBack()
+            }
+        ) {
+
+            Text(
+                "¿Ya tienes cuenta? Inicia sesión",
+                color = colorPrimario
+            )
         }
     }
 }
