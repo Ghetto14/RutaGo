@@ -21,7 +21,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -29,7 +28,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ghettodev.rutago.R
-import com.ghettodev.rutago.data.AppDatabase
+import com.ghettodev.rutago.data.database.AppDatabase
 import com.ghettodev.rutago.data.entity.Usuario
 import com.ghettodev.rutago.domain.validator.AuthValidator
 import kotlinx.coroutines.CoroutineScope
@@ -246,29 +245,43 @@ fun RegisterScreen(
 
                 CoroutineScope(Dispatchers.IO).launch {
 
-                    usuarioDao.insertar(
-                        Usuario(
-                            nombreUsuario = nombre,
-                            correo = email,
-                            telefono = telefono,
-                            password = password
+                    try {
+                        usuarioDao.insertar(
+                            Usuario(
+                                nombreUsuario = nombre,
+                                correo = email,
+                                telefono = telefono,
+                                password = password
+                            )
                         )
-                    )
 
-                    launch(Dispatchers.Main) {
+                        launch(Dispatchers.Main) {
 
-                        Toast.makeText(
-                            context,
-                            "Usuario registrado correctamente",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                            Toast.makeText(
+                                context,
+                                "✅ Usuario registrado correctamente",
+                                Toast.LENGTH_SHORT
+                            ).show()
 
-                        onRegisterClick(
-                            nombre,
-                            email,
-                            telefono,
-                            password
-                        )
+                            // LIMPIAR LOS CAMPOS
+                            nombre = ""
+                            email = ""
+                            telefono = ""
+                            password = ""
+                            confirmarPassword = ""
+
+                            // REDIRECCIONAR AUTOMÁTICAMENTE AL LOGIN
+                            // (Sin que el usuario tenga que hacer clic)
+                            onBack()
+                        }
+                    } catch (e: Exception) {
+                        launch(Dispatchers.Main) {
+                            Toast.makeText(
+                                context,
+                                "⚠️ Error: El email ya está registrado",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
                 }
             },

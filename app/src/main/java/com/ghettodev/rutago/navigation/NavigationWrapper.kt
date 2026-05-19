@@ -35,19 +35,18 @@ fun NavigationWrapper() {
 
     NavHost(
         navController = navController,
-        startDestination = "main"
+        startDestination = "login"
     ) {
 
         // 🔐 LOGIN
         composable("login") {
             LoginScreen(
                 onLoginClick = { _, _ ->
-                    // 🔥 acceso permitido → main
                     navController.navigate("main") {
                         popUpTo("login") { inclusive = true }
                     }
                 },
-                onRegisterClick = {
+                onRegistroClick = {          // ✅ bien escrito
                     navController.navigate("registro")
                 }
             )

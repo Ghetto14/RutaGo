@@ -5,6 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
+// IMPORTA LO DE USUARIOS
+import com.ghettodev.rutago.data.dao.UsuarioDao
+import com.ghettodev.rutago.data.entity.Usuario
+
+// LO QUE YA TENÍAS
 import com.ghettodev.rutago.data.dao.RutaDao
 import com.ghettodev.rutago.data.dao.ParadaDao
 import com.ghettodev.rutago.data.dao.RutaParadaDao
@@ -13,11 +18,17 @@ import com.ghettodev.rutago.data.entity.Parada
 import com.ghettodev.rutago.data.entity.RutaParada
 
 @Database(
-    entities = [Ruta::class, Parada::class, RutaParada::class],
-    version = 1
+    entities = [
+        Usuario::class,      // ← AGREGAR AQUÍ
+        Ruta::class,
+        Parada::class,
+        RutaParada::class
+    ],
+    version = 2
 )
 abstract class AppDatabase : RoomDatabase() {
 
+    abstract fun usuarioDao(): UsuarioDao        // ← AGREGAR AQUÍ
     abstract fun rutaDao(): RutaDao
     abstract fun paradaDao(): ParadaDao
     abstract fun rutaParadaDao(): RutaParadaDao
@@ -32,7 +43,9 @@ abstract class AppDatabase : RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "rutago_db"
-                ).build()
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
 
                 INSTANCE = instance
                 instance
