@@ -1,69 +1,105 @@
 package com.ghettodev.rutago.navigation
 
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.rememberNavController
+import androidx.navigation.NavType
+import androidx.navigation.compose.*
+import androidx.navigation.navArgument
+
 import com.ghettodev.rutago.data.location.LocationService
-import com.ghettodev.rutago.ui.screens.DetalleParada
-import com.ghettodev.rutago.ui.screens.ERutasS
-import com.ghettodev.rutago.ui.screens.HomeScreen
-import com.ghettodev.rutago.ui.screens.LoginScreen
-import com.ghettodev.rutago.ui.screens.RegisterScreen
-import com.ghettodev.rutago.ui.screens.ReportarBloqueoScreen
+import com.ghettodev.rutago.data.repository.RutasRepository
+import com.ghettodev.rutago.data.database.AppDatabase
+
+import com.ghettodev.rutago.ui.screens.*
 
 @Composable
-fun NavigationWrapper(){
-    //craer objeto para la navegacion
-    val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = Login) {
+fun NavigationWrapper() {
 
-        //pantalla login
-        composable<Login>{//espera el objeto Login
-            LoginScreen (//composable a mostrar
-                onLoginClick = { email, password ->
-                    navController.navigate(Main)//navegar al objeto main
+    val navController = rememberNavController()
+    val context = LocalContext.current
+
+    // 🔥 DB
+    val db = AppDatabase.getDatabase(context)
+
+    // 🔥 Repository
+    val rutaRepository = remember {
+        RutasRepository(
+            rutaDao = db.rutaDao(),
+            paradaDao = db.paradaDao(),
+            rutaParadaDao = db.rutaParadaDao(),
+            parser = com.ghettodev.rutago.parser.GeoJsonParser()
+        )
+    }
+
+    NavHost(
+        navController = navController,
+        startDestination = "main"
+    ) {
+
+        // 🔐 LOGIN
+        composable("login") {
+            LoginScreen(
+                onLoginClick = { _, _ ->
+                    // 🔥 acceso permitido → main
+                    navController.navigate("main") {
+                        popUpTo("login") { inclusive = true }
+                    }
                 },
-                onRegistroClick = {
-                    navController.navigate(Registro)
+                onRegisterClick = {
+                    navController.navigate("registro")
                 }
             )
         }
 
-        //pantalla main
-        composable<Main>{//espera objeto main
-            HomeScreen(//composable a mostrar
+        // 🏠 HOME
+        composable("main") {
+            HomeScreen(
                 onExplorarRutas = {
-                    navController.navigate(ERutasS)//navegar a erutass
+                    navController.navigate("explorar_rutas")
                 },
                 onVerTodas = {
-                    navController.navigate(RutasPopulares)
+                    navController.navigate("rutas_populares")
                 }
             )
         }
 
-        // NavigationWrapper.kt
-        composable<ERutasS> {
-            val context = LocalContext.current
-
+        // 🗺️ MAPA
+        // Dentro de NavHost, en la ruta "explorar_rutas":
+        composable("explorar_rutas") {
             ERutasS(
-                locationService = LocationService(context),
-                onReporteClic = {
-                    navController.navigate(Reporte)
-                }
+                rutaRepository = rutaRepository,   // ← pasamos el repositorio
+                onReporteClic = { navController.navigate("reporte") }
+            )
+        }
+        // 📍 DETALLE
+        composable("rutas_populares") {
+            RutasPopularesScreen(
+                rutaRepository = rutaRepository,
+                onRutaClick = { idRuta ->
+                    navController.navigate("detalle_ruta/$idRuta")
+                },
+                onBack = { navController.popBackStack() }
             )
         }
 
-        composable<RutasPopulares>{
-            DetalleParada(
-                onBack = {
-                    navController.popBackStack()
-                }
-            )
+        composable(
+            "detalle_ruta/{idRuta}",
+            arguments = listOf(navArgument("idRuta") { type = NavType.IntType })
+        ) { backStackEntry ->
+            val idRuta = backStackEntry.arguments?.getInt("idRuta")
+            if (idRuta != null) {
+                DetalleParada(
+                    idRuta = idRuta,
+                    rutaRepository = rutaRepository,
+                    onBack = { navController.popBackStack() }
+                )
+            }
         }
 
-        composable <Registro>{
+        // 📝 REGISTRO
+        composable("registro") {
             RegisterScreen(
                 onBack = {
                     navController.popBackStack()
@@ -71,13 +107,13 @@ fun NavigationWrapper(){
             )
         }
 
-        composable<Reporte>{
+        // 🚨 REPORTE
+        composable("reporte") {
             ReportarBloqueoScreen(
                 onCancelar = {
                     navController.popBackStack()
                 }
             )
         }
-
     }
 }

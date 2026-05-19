@@ -116,32 +116,6 @@ fun ButtonAction(
         )
     }
     Spacer(modifier = Modifier.height(12.dp))
-    OutlinedButton(
-        onClick = {},
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(56.dp),
-        colors = ButtonDefaults.outlinedButtonColors(
-            contentColor = PrimaryGreen,
-        ),
-        border = androidx.compose.foundation.BorderStroke(2.dp, PrimaryGreen),
-        shape = RoundedCornerShape(12.dp)
-    ) {
-        Icon(
-            painter = painterResource(id = R.drawable.directions_bus),
-            contentDescription = "Icono autobus",
-            modifier = Modifier
-                .height(24.dp)
-        )
-        Spacer(modifier = Modifier.width(8.dp))
-        Text(
-            text = "Ver rutas cercanas",
-            fontSize = 16.sp,
-            fontWeight = FontWeight.SemiBold
-        )
-    }
-
-
 }
 
 @Composable

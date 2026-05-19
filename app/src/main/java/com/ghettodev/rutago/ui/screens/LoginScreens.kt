@@ -7,12 +7,10 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.Lock
-import androidx.compose.material.icons.filled.Visibility
-import androidx.compose.material.icons.filled.VisibilityOff
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -54,57 +52,30 @@ fun LoginScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.White)
-            .padding(24.dp),
+            .padding(24.dp)
+            .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
         Image(
             painter = painterResource(id = R.drawable.rutago),
-            contentDescription = "Logo RutaGo",
-            modifier = Modifier
-                .size(150.dp)
-                .clip(RoundedCornerShape(28.dp))
+            contentDescription = "Logo",
+            modifier = Modifier.size(100.dp)
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
-        Text(
-            text = "RutaGo",
-            fontSize = 36.sp,
-            fontWeight = FontWeight.Bold,
-            color = Color.Black
-        )
+        Text("Iniciar sesión", fontSize = 28.sp)
 
-        Text(
-            text = "Llega rápido a tu destino",
-            fontSize = 14.sp,
-            color = Color.Gray
-        )
-
-        Spacer(modifier = Modifier.height(48.dp))
+        Spacer(modifier = Modifier.height(32.dp))
 
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
-            label = { Text("Correo electrónico") },
-            leadingIcon = {
-                Icon(
-                    imageVector = Icons.Default.Email,
-                    contentDescription = "Email",
-                    tint = Color(0xFF34A853)
-                )
-            },
-            singleLine = true,
+            label = { Text("Correo") },
             modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(12.dp),
-            isError = email.isNotEmpty() && !emailValido,
-            colors = OutlinedTextFieldDefaults.colors(
-                focusedBorderColor = Color(0xFF34A853),
-                unfocusedBorderColor = Color(0xFF34A853),
-                errorBorderColor = Color.Red,
-                errorLabelColor = Color.Red
-            )
+            singleLine = true
         )
 
         if (email.isNotEmpty() && !emailValido) {
@@ -125,13 +96,6 @@ fun LoginScreen(
             value = password,
             onValueChange = { password = it },
             label = { Text("Contraseña") },
-            leadingIcon = {
-                Icon(
-                    imageVector = Icons.Default.Lock,
-                    contentDescription = "Contraseña",
-                    tint = Color(0xFF34A853)
-                )
-            },
             trailingIcon = {
                 Icon(
                     imageVector =
@@ -153,14 +117,7 @@ fun LoginScreen(
                     PasswordVisualTransformation(),
             singleLine = true,
             modifier = Modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(12.dp),
-            isError = password.isNotEmpty() && !passwordValida,
-            colors = OutlinedTextFieldDefaults.colors(
-                focusedBorderColor = Color(0xFF34A853),
-                unfocusedBorderColor = Color(0xFF34A853),
-                errorBorderColor = Color.Red,
-                errorLabelColor = Color.Red
-            )
+            singleLine = true
         )
 
         if (password.isNotEmpty() && !passwordValida) {
@@ -208,17 +165,7 @@ fun LoginScreen(
                     }
                 }
             },
-            enabled = formularioValido,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(50.dp),
-            shape = RoundedCornerShape(12.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFF34A853),
-                contentColor = Color.White,
-                disabledContainerColor = Color.LightGray,
-                disabledContentColor = Color.White
-            )
+            modifier = Modifier.fillMaxWidth().height(50.dp)
         ) {
 
             Text(

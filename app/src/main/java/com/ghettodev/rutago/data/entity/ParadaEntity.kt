@@ -5,10 +5,14 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "parada")
 data class Parada(
-    @PrimaryKey(autoGenerate = true) val idParada: Int,
+    @PrimaryKey
+    val idParada: Int,                      // NO autoGenerate
     val tipoParada: String,
-    val nombreParada: String,
+    val nombre: String,
     val latitud: Double,
     val longitud: Double,
     val color: String,
+    val direccion: String = "",             // IDA, REGRESO
+    val secuencia: Int = 0,
+    val conexiones: String = ""
 )

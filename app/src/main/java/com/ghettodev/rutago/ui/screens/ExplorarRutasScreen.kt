@@ -1,165 +1,161 @@
 package com.ghettodev.rutago.ui.screens
 
-import android.Manifest
-import android.content.pm.PackageManager
-import android.location.Location
-import android.util.Log
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import android.widget.Toast
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Warning
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.SearchBar
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat
-import com.ghettodev.rutago.data.location.LocationService
-import com.ghettodev.rutago.ui.components.MapItem
-import kotlinx.coroutines.launch
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.ghettodev.rutago.data.repository.RutasRepository
+import com.ghettodev.rutago.ui.components.PointsOverlay
+import com.ghettodev.rutago.viewmodel.RutaViewModel
+import org.maplibre.compose.camera.CameraPosition
+import org.maplibre.compose.camera.rememberCameraState
+import org.maplibre.compose.map.MaplibreMap
+import org.maplibre.compose.style.BaseStyle
+import org.maplibre.spatialk.geojson.Position
+
+fun formatRutaKey(input: String): String {
+    val text = input.trim()
+    return when {
+        text.all { it.isDigit() } -> "ra-" + text.padStart(2, '0')
+        text.startsWith("ra", ignoreCase = true) -> text.lowercase()
+        else -> text.lowercase()
+    }
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ERutasS(
-    locationService: LocationService,
+    rutaRepository: RutasRepository,
     onReporteClic: () -> Unit = {}
 ) {
-    var userLocation by remember { mutableStateOf<Location?>(null) }
-    var isLoading by remember { mutableStateOf(false) }
-    val scope = rememberCoroutineScope()
     val context = LocalContext.current
 
-    var text by remember { mutableStateOf("") }
-    var active by remember { mutableStateOf(false) }
-
-    val permissionLauncher = rememberLauncherForActivityResult(
-        ActivityResultContracts.RequestPermission()
-    ) { permissionGranted ->
-        if (permissionGranted) {
-            isLoading = true
-            scope.launch {
-                val location = locationService.getCurrentLocation()
-                Log.d("UBICACION", "Permiso otorgado - lat: ${location?.latitude}, lng: ${location?.longitude}")
-                userLocation = location
-                isLoading = false
+    val rutaViewModel: RutaViewModel = viewModel(
+        factory = object : ViewModelProvider.Factory {
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
+                @Suppress("UNCHECKED_CAST")
+                return RutaViewModel(rutaRepository) as T
             }
+        }
+    )
+
+    val uiState by rutaViewModel.uiState.collectAsState()
+    var searchText by remember { mutableStateOf("") }
+    var isSearchActive by remember { mutableStateOf(false) }
+
+    // Estado de la cámara compartido entre el mapa y los puntos
+    val cameraState = rememberCameraState(
+        firstPosition = CameraPosition(
+            target = Position(-96.744502, 17.076723),
+            zoom = 14.0
+        )
+    )
+
+    // Toast cuando se cargan paradas exitosamente
+    LaunchedEffect(uiState.paradasMostradas) {
+        if (uiState.paradasMostradas.isNotEmpty()) {
+            Toast.makeText(
+                context,
+                "✅ Ruta cargada: ${uiState.paradasMostradas.size} paradas",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 
-    Box(modifier = Modifier.fillMaxWidth()) {
+    // Toast cuando hay error
+    LaunchedEffect(uiState.error) {
+        if (uiState.error != null) {
+            Toast.makeText(
+                context,
+                "❌ Error: ${uiState.error}",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+    }
 
-        MapItem(userLocation = userLocation)
+    Box(modifier = Modifier.fillMaxSize()) {
+        // 1. MAPA (sin puntos)
+        MaplibreMap(
+            modifier = Modifier.fillMaxSize(),
+            cameraState = cameraState,
+            baseStyle = BaseStyle.Uri("https://tiles.openfreemap.org/styles/liberty")
+        )
 
-        Column(
-            modifier = Modifier
-                .padding(5.dp)
-                .fillMaxWidth(),
-            verticalArrangement = Arrangement.Center
-        ) {
+        // 2. CAPA DE PUNTOS SUPERPUESTA (solo si hay paradas)
+        if (uiState.paradasMostradas.isNotEmpty()) {
+            PointsOverlay(
+                paradas = uiState.paradasMostradas,
+                cameraState = cameraState,
+                modifier = Modifier.fillMaxSize()
+            )
+        }
+
+        // 3. BARRA DE BÚSQUEDA
+        Column(modifier = Modifier.padding(8.dp).fillMaxWidth()) {
             SearchBar(
-                query = text,
-                onQueryChange = { text = it },
-                onSearch = { active = false },
-                active = active,
-                onActiveChange = { active = it },
-                placeholder = { Text("Buscar destino") },
-                leadingIcon = {
-                    Icon(Icons.Default.Search, contentDescription = "Barra de búsqueda")
+                query = searchText,
+                onQueryChange = { searchText = it },
+                onSearch = {
+                    isSearchActive = false
+                    if (searchText.isNotBlank()) {
+                        val rutaKey = formatRutaKey(searchText)
+                        Toast.makeText(context, "🔍 Buscando ruta: $rutaKey", Toast.LENGTH_SHORT).show()
+                        rutaViewModel.cargarRuta(context, rutaKey)
+                    }
                 },
+                active = isSearchActive,
+                onActiveChange = { isSearchActive = it },
+                placeholder = { Text("Ej: RA-02, 2, 03") },
+                leadingIcon = { Icon(Icons.Default.Search, contentDescription = "Buscar") },
                 trailingIcon = {
-                    if (active) {
-                        IconButton(onClick = {
-                            if (text.isNotEmpty()) text = "" else active = false
-                        }) {
-                            Icon(Icons.Default.Close, contentDescription = "Cerrar")
+                    if (isSearchActive && searchText.isNotEmpty()) {
+                        IconButton(onClick = { searchText = "" }) {
+                            Icon(Icons.Default.Close, contentDescription = "Limpiar")
                         }
                     }
                 },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                colors = SearchBarDefaults.colors(
+                    containerColor = Color.White.copy(alpha = 0.95f)
+                )
             ) {}
         }
 
-        Column(
+        // 4. BOTÓN DE REPORTE
+        FloatingActionButton(
+            onClick = onReporteClic,
             modifier = Modifier
                 .align(Alignment.BottomEnd)
                 .padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            containerColor = Color.Red
         ) {
-            FloatingActionButton(
-                onClick = {
-                    val hasPermission = ContextCompat.checkSelfPermission(
-                        context,
-                        Manifest.permission.ACCESS_FINE_LOCATION
-                    ) == PackageManager.PERMISSION_GRANTED
+            Icon(Icons.Default.Warning, contentDescription = "Reportar", tint = Color.White)
+        }
 
-                    Log.d("UBICACION", "Botón presionado - tiene permiso: $hasPermission")
-
-                    if (hasPermission) {
-                        isLoading = true
-                        scope.launch {
-                            val location = locationService.getCurrentLocation()
-                            Log.d("UBICACION", "lat: ${location?.latitude}, lng: ${location?.longitude}")
-                            userLocation = location
-                            isLoading = false
-                        }
-                    } else {
-                        permissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
-                    }
-                },
-                modifier = Modifier.size(56.dp),
-                containerColor = Color.Blue
+        // 5. MENSAJE DE ERROR (CARD)
+        if (uiState.error != null) {
+            Card(
+                modifier = Modifier
+                    .align(Alignment.BottomCenter)
+                    .padding(16.dp)
             ) {
-                if (isLoading) {
-                    CircularProgressIndicator(
-                        modifier = Modifier.size(24.dp),
-                        strokeWidth = 2.dp,
-                        color = Color.White
-                    )
-                } else {
-                    Icon(
-                        imageVector = Icons.Default.LocationOn,
-                        contentDescription = "Mi ubicación",
-                        tint = Color.White
-                    )
-                }
-            }
-
-            FloatingActionButton(
-                onClick = { onReporteClic() },
-                modifier = Modifier.size(70.dp),
-                containerColor = Color.Red
-            ) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Icon(
-                        imageVector = Icons.Default.Warning,
-                        contentDescription = "Reportar",
-                        tint = Color.White
-                    )
-                    Text(text = "Reportar", color = Color.White)
-                }
+                Text(
+                    text = "❌ ${uiState.error}",
+                    modifier = Modifier.padding(12.dp),
+                    color = MaterialTheme.colorScheme.error
+                )
             }
         }
     }

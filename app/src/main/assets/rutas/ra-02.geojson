@@ -1,0 +1,2523 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "ruta": "RA-02",
+    "rutaNumero": "2",
+    "totalParadas": 110,
+    "idaCount": 57,
+    "regresoCount": 51,
+    "baseCount": 2,
+    "terminalCount": 2
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.77915,
+          17.10135
+        ]
+      },
+      "properties": {
+        "idParada": 1,
+        "nombre": "Terminal Base Santa María Atzompa",
+        "tipoParada": "base",
+        "direccion": "TERMINAL",
+        "secuencia": 1,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7786,
+          17.1007
+        ]
+      },
+      "properties": {
+        "idParada": 2,
+        "nombre": "Zaragoza",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 2,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7779,
+          17.0999
+        ]
+      },
+      "properties": {
+        "idParada": 3,
+        "nombre": "Juárez",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 3,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7771,
+          17.099
+        ]
+      },
+      "properties": {
+        "idParada": 4,
+        "nombre": "Camino Nacional",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 4,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7762,
+          17.098
+        ]
+      },
+      "properties": {
+        "idParada": 5,
+        "nombre": "Buenavista",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 5,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7752,
+          17.097
+        ]
+      },
+      "properties": {
+        "idParada": 6,
+        "nombre": "Crucero de Atzompa",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 6,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7741,
+          17.096
+        ]
+      },
+      "properties": {
+        "idParada": 7,
+        "nombre": "Oscar Ibarra",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 7,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7729,
+          17.0949
+        ]
+      },
+      "properties": {
+        "idParada": 8,
+        "nombre": "Las Culturas",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 8,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7716,
+          17.0938
+        ]
+      },
+      "properties": {
+        "idParada": 9,
+        "nombre": "Laureles",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 9,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7703,
+          17.0927
+        ]
+      },
+      "properties": {
+        "idParada": 10,
+        "nombre": "Jacarandas",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 10,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.769,
+          17.0916
+        ]
+      },
+      "properties": {
+        "idParada": 11,
+        "nombre": "Laurel",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 11,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7676,
+          17.0904
+        ]
+      },
+      "properties": {
+        "idParada": 12,
+        "nombre": "Oyamel",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 12,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-19"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7661,
+          17.0891
+        ]
+      },
+      "properties": {
+        "idParada": 13,
+        "nombre": "Samaría",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 13,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7645,
+          17.0878
+        ]
+      },
+      "properties": {
+        "idParada": 14,
+        "nombre": "Morelos",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 14,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7629,
+          17.0864
+        ]
+      },
+      "properties": {
+        "idParada": 15,
+        "nombre": "Colonia Oaxaca",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 15,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7612,
+          17.085
+        ]
+      },
+      "properties": {
+        "idParada": 16,
+        "nombre": "Antonio de León",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 16,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7595,
+          17.0836
+        ]
+      },
+      "properties": {
+        "idParada": 17,
+        "nombre": "Pizza Plaza Bella",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 17,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7578,
+          17.0822
+        ]
+      },
+      "properties": {
+        "idParada": 18,
+        "nombre": "Agencia Montoya",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 18,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.756,
+          17.0808
+        ]
+      },
+      "properties": {
+        "idParada": 19,
+        "nombre": "21 de Marzo",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 19,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RA-14",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7542,
+          17.0794
+        ]
+      },
+      "properties": {
+        "idParada": 20,
+        "nombre": "Artículo 100",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 20,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7523,
+          17.078
+        ]
+      },
+      "properties": {
+        "idParada": 21,
+        "nombre": "Adolfo López Mateos",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 21,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RA-14",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7503,
+          17.0766
+        ]
+      },
+      "properties": {
+        "idParada": 22,
+        "nombre": "Itandehui",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 22,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RA-14",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7483,
+          17.0752
+        ]
+      },
+      "properties": {
+        "idParada": 23,
+        "nombre": "Juventino Rosas",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 23,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RA-14"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7463,
+          17.0738
+        ]
+      },
+      "properties": {
+        "idParada": 24,
+        "nombre": "Bernardo Balbuena",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 24,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7443,
+          17.0723
+        ]
+      },
+      "properties": {
+        "idParada": 25,
+        "nombre": "Monte Albán",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 25,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-07",
+          "RA-11",
+          "RA-14",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7422,
+          17.0707
+        ]
+      },
+      "properties": {
+        "idParada": 26,
+        "nombre": "Av. Mexicapan",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 26,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-07",
+          "RA-14"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7401,
+          17.0691
+        ]
+      },
+      "properties": {
+        "idParada": 27,
+        "nombre": "Sierra Juárez",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 27,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-07",
+          "RA-11",
+          "RA-14"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.738,
+          17.0676
+        ]
+      },
+      "properties": {
+        "idParada": 28,
+        "nombre": "Puente Valerio Trujano",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 28,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-07",
+          "RA-11",
+          "RA-14"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7359,
+          17.0661
+        ]
+      },
+      "properties": {
+        "idParada": 29,
+        "nombre": "Central de Abasto",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 29,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-07",
+          "RA-11",
+          "RA-14",
+          "RA-15",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7338,
+          17.0647
+        ]
+      },
+      "properties": {
+        "idParada": 30,
+        "nombre": "Guadalupe Victoria",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 30,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RC-06",
+          "RA-07",
+          "RA-13"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.732,
+          17.0634
+        ]
+      },
+      "properties": {
+        "idParada": 31,
+        "nombre": "Díaz Ordaz",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 31,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7303,
+          17.062
+        ]
+      },
+      "properties": {
+        "idParada": 32,
+        "nombre": "Valerio Trujano",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 32,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RC-06",
+          "RA-07",
+          "RA-11"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7287,
+          17.0606
+        ]
+      },
+      "properties": {
+        "idParada": 33,
+        "nombre": "Independencia",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 33,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-07",
+          "RA-11"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7272,
+          17.0595
+        ]
+      },
+      "properties": {
+        "idParada": 34,
+        "nombre": "Manuel Bravo",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 34,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RC-05",
+          "RA-07",
+          "RA-11"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7259,
+          17.0586
+        ]
+      },
+      "properties": {
+        "idParada": 35,
+        "nombre": "Quetzalcóatl",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 35,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7249,
+          17.0579
+        ]
+      },
+      "properties": {
+        "idParada": 36,
+        "nombre": "Joaquín Amaro",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 36,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RC-06",
+          "RA-07",
+          "RA-11"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.725,
+          17.057
+        ]
+      },
+      "properties": {
+        "idParada": 37,
+        "nombre": "Barrio de Xochimilco",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 37,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RC-06",
+          "RA-11"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7251,
+          17.056
+        ]
+      },
+      "properties": {
+        "idParada": 38,
+        "nombre": "IMSS 01",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 38,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RC-06",
+          "RA-11"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7252,
+          17.0549
+        ]
+      },
+      "properties": {
+        "idParada": 39,
+        "nombre": "Belisario Domínguez",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 39,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RC-11",
+          "RC-15"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7253,
+          17.0537
+        ]
+      },
+      "properties": {
+        "idParada": 40,
+        "nombre": "Heroica Escuela Naval Militar",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 40,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RC-11",
+          "RC-13"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7254,
+          17.0524
+        ]
+      },
+      "properties": {
+        "idParada": 41,
+        "nombre": "Fuente de las Ocho Regiones",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 41,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RC-11"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.72545,
+          17.0513
+        ]
+      },
+      "properties": {
+        "idParada": 42,
+        "nombre": "CBTis 26 (Contrafrente)",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 42,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RC-11"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.72545,
+          17.0502
+        ]
+      },
+      "properties": {
+        "idParada": 43,
+        "nombre": "Florencia",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 43,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RC-15"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.72543,
+          17.0491
+        ]
+      },
+      "properties": {
+        "idParada": 44,
+        "nombre": "La Paz",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 44,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7254,
+          17.048
+        ]
+      },
+      "properties": {
+        "idParada": 45,
+        "nombre": "Guadalupe Victoria",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 45,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.72538,
+          17.047
+        ]
+      },
+      "properties": {
+        "idParada": 46,
+        "nombre": "2a de Emiliano Zapata",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 46,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.72535,
+          17.046
+        ]
+      },
+      "properties": {
+        "idParada": 47,
+        "nombre": "Lino García",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 47,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7253,
+          17.0449
+        ]
+      },
+      "properties": {
+        "idParada": 48,
+        "nombre": "Lázaro Cárdenas",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 48,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.72528,
+          17.0439
+        ]
+      },
+      "properties": {
+        "idParada": 49,
+        "nombre": "Ricardo Flores Magón",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 49,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.72524,
+          17.0429
+        ]
+      },
+      "properties": {
+        "idParada": 50,
+        "nombre": "El Rodeo",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 50,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7252,
+          17.042
+        ]
+      },
+      "properties": {
+        "idParada": 51,
+        "nombre": "Plan de Ayala",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 51,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.72444,
+          17.06283
+        ]
+      },
+      "properties": {
+        "idParada": 52,
+        "nombre": "Guadalupe Victoria (terminal sur)",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 52,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.72438,
+          17.06283
+        ]
+      },
+      "properties": {
+        "idParada": 53,
+        "nombre": "Terminal Base Guadalupe Victoria",
+        "tipoParada": "base",
+        "direccion": "TERMINAL",
+        "secuencia": 53,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7243,
+          17.0635
+        ]
+      },
+      "properties": {
+        "idParada": 54,
+        "nombre": "Arroyo",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 54,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7245,
+          17.0645
+        ]
+      },
+      "properties": {
+        "idParada": 55,
+        "nombre": "Constitución",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 55,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7247,
+          17.0654
+        ]
+      },
+      "properties": {
+        "idParada": 56,
+        "nombre": "Ordaz",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 56,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7249,
+          17.0664
+        ]
+      },
+      "properties": {
+        "idParada": 57,
+        "nombre": "Juárez (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 57,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7251,
+          17.0673
+        ]
+      },
+      "properties": {
+        "idParada": 58,
+        "nombre": "Allende",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 58,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7254,
+          17.0682
+        ]
+      },
+      "properties": {
+        "idParada": 59,
+        "nombre": "Buenavista (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 59,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7258,
+          17.0692
+        ]
+      },
+      "properties": {
+        "idParada": 60,
+        "nombre": "Crucero de Atzompa (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 60,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7263,
+          17.0702
+        ]
+      },
+      "properties": {
+        "idParada": 61,
+        "nombre": "Av. de las Culturas",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 61,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7268,
+          17.0711
+        ]
+      },
+      "properties": {
+        "idParada": 62,
+        "nombre": "Abeto",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 62,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7274,
+          17.072
+        ]
+      },
+      "properties": {
+        "idParada": 63,
+        "nombre": "Encino",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 63,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7281,
+          17.0729
+        ]
+      },
+      "properties": {
+        "idParada": 64,
+        "nombre": "El Puentecito",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 64,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.729,
+          17.0738
+        ]
+      },
+      "properties": {
+        "idParada": 65,
+        "nombre": "Pochutla",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 65,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.73,
+          17.0748
+        ]
+      },
+      "properties": {
+        "idParada": 66,
+        "nombre": "Samaría (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 66,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7311,
+          17.0757
+        ]
+      },
+      "properties": {
+        "idParada": 67,
+        "nombre": "7 Regiones",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 67,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7323,
+          17.0766
+        ]
+      },
+      "properties": {
+        "idParada": 68,
+        "nombre": "Niños Héroes",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 68,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7336,
+          17.0774
+        ]
+      },
+      "properties": {
+        "idParada": 69,
+        "nombre": "Miahuatlán",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 69,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7349,
+          17.0782
+        ]
+      },
+      "properties": {
+        "idParada": 70,
+        "nombre": "Ixtepec",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 70,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7363,
+          17.079
+        ]
+      },
+      "properties": {
+        "idParada": 71,
+        "nombre": "Plaza Bella Cinemex",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 71,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7376,
+          17.0797
+        ]
+      },
+      "properties": {
+        "idParada": 72,
+        "nombre": "Plaza Bella",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 72,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7389,
+          17.0804
+        ]
+      },
+      "properties": {
+        "idParada": 73,
+        "nombre": "Flores Magón",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 73,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RA-14",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7401,
+          17.0811
+        ]
+      },
+      "properties": {
+        "idParada": 74,
+        "nombre": "Benito Juárez",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 74,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RA-14",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7414,
+          17.0818
+        ]
+      },
+      "properties": {
+        "idParada": 75,
+        "nombre": "Avenida del Panteón",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 75,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RA-14",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7427,
+          17.0825
+        ]
+      },
+      "properties": {
+        "idParada": 76,
+        "nombre": "Macedonio Alcalá",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 76,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RA-14",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.744,
+          17.0831
+        ]
+      },
+      "properties": {
+        "idParada": 77,
+        "nombre": "Itandehui (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 77,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RA-14",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7454,
+          17.0837
+        ]
+      },
+      "properties": {
+        "idParada": 78,
+        "nombre": "Quetzalcóatl (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 78,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RA-14",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7467,
+          17.0843
+        ]
+      },
+      "properties": {
+        "idParada": 79,
+        "nombre": "Mixcóatl",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 79,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RA-14",
+          "RA-15"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7481,
+          17.0848
+        ]
+      },
+      "properties": {
+        "idParada": 80,
+        "nombre": "Monte Albán (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 80,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RA-14",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7494,
+          17.0853
+        ]
+      },
+      "properties": {
+        "idParada": 81,
+        "nombre": "Av. Mexicapan (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 81,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-07",
+          "RA-14",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7508,
+          17.0858
+        ]
+      },
+      "properties": {
+        "idParada": 82,
+        "nombre": "Sierra Juárez (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 82,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-07",
+          "RA-11",
+          "RA-14",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7523,
+          17.0862
+        ]
+      },
+      "properties": {
+        "idParada": 83,
+        "nombre": "Valerio Trujano (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 83,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-07",
+          "RA-11",
+          "RA-14",
+          "RA-15",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7538,
+          17.0866
+        ]
+      },
+      "properties": {
+        "idParada": 84,
+        "nombre": "De Mercaderes",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 84,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-01",
+          "RA-07",
+          "RA-11",
+          "RA-14",
+          "RA-15",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7553,
+          17.087
+        ]
+      },
+      "properties": {
+        "idParada": 85,
+        "nombre": "Central de Abasto (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 85,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-07",
+          "RA-14",
+          "RA-15",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7568,
+          17.0873
+        ]
+      },
+      "properties": {
+        "idParada": 86,
+        "nombre": "Guadalupe Victoria (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 86,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RC-08",
+          "RA-07",
+          "RA-14",
+          "RA-15",
+          "RA-16"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7583,
+          17.0876
+        ]
+      },
+      "properties": {
+        "idParada": 87,
+        "nombre": "Mier y Terán",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 87,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RC-06",
+          "RA-07",
+          "RA-11",
+          "RA-14",
+          "RA-15"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7597,
+          17.0879
+        ]
+      },
+      "properties": {
+        "idParada": 88,
+        "nombre": "Hidalgo",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 88,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-07",
+          "RA-11"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7612,
+          17.0881
+        ]
+      },
+      "properties": {
+        "idParada": 89,
+        "nombre": "Alameda de León",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 89,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RC-14"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7626,
+          17.0883
+        ]
+      },
+      "properties": {
+        "idParada": 90,
+        "nombre": "Manuel Fernández Fiallo",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 90,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RC-14"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7639,
+          17.0885
+        ]
+      },
+      "properties": {
+        "idParada": 91,
+        "nombre": "Iglesia de Las Nieves",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 91,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7652,
+          17.0887
+        ]
+      },
+      "properties": {
+        "idParada": 92,
+        "nombre": "Mariano Abasolo",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 92,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7664,
+          17.089
+        ]
+      },
+      "properties": {
+        "idParada": 93,
+        "nombre": "Zárate",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 93,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7676,
+          17.0894
+        ]
+      },
+      "properties": {
+        "idParada": 94,
+        "nombre": "El Llano",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 94,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7688,
+          17.0898
+        ]
+      },
+      "properties": {
+        "idParada": 95,
+        "nombre": "Privada de Almendros",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 95,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.77,
+          17.0903
+        ]
+      },
+      "properties": {
+        "idParada": 96,
+        "nombre": "Belisario Domínguez (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 96,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RC-15"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7712,
+          17.0908
+        ]
+      },
+      "properties": {
+        "idParada": 97,
+        "nombre": "Heroica Escuela Naval Militar (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 97,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RC-15"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7724,
+          17.0914
+        ]
+      },
+      "properties": {
+        "idParada": 98,
+        "nombre": "Fuerza Aérea Mexicana",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 98,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RC-15"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7736,
+          17.092
+        ]
+      },
+      "properties": {
+        "idParada": 99,
+        "nombre": "Hospital Civil",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 99,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RC-15"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7747,
+          17.0928
+        ]
+      },
+      "properties": {
+        "idParada": 100,
+        "nombre": "CBTis 26",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 100,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RC-15"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7756,
+          17.0937
+        ]
+      },
+      "properties": {
+        "idParada": 101,
+        "nombre": "México 68",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 101,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": [
+          "RA-11",
+          "RC-15"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7763,
+          17.0947
+        ]
+      },
+      "properties": {
+        "idParada": 102,
+        "nombre": "Soledad",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 102,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7769,
+          17.0957
+        ]
+      },
+      "properties": {
+        "idParada": 103,
+        "nombre": "Del Panteón",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 103,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7774,
+          17.0966
+        ]
+      },
+      "properties": {
+        "idParada": 104,
+        "nombre": "Gabino Barrera",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 104,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7778,
+          17.0975
+        ]
+      },
+      "properties": {
+        "idParada": 105,
+        "nombre": "Puente Peatonal",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 105,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7781,
+          17.0984
+        ]
+      },
+      "properties": {
+        "idParada": 106,
+        "nombre": "Lino García (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 106,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7784,
+          17.0993
+        ]
+      },
+      "properties": {
+        "idParada": 107,
+        "nombre": "Lázaro Cárdenas (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 107,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.77865,
+          17.1002
+        ]
+      },
+      "properties": {
+        "idParada": 108,
+        "nombre": "Ricardo Flores Magón (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 108,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.77885,
+          17.1007
+        ]
+      },
+      "properties": {
+        "idParada": 109,
+        "nombre": "El Rodeo (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 109,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.779,
+          17.1011
+        ]
+      },
+      "properties": {
+        "idParada": 110,
+        "nombre": "Plan de Ayala (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 110,
+        "ruta": "RA-02",
+        "rutaNumero": "2",
+        "color": "#FF6600",
+        "conexiones": ""
+      }
+    }
+  ]
+}

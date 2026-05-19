@@ -34,27 +34,25 @@ import com.ghettodev.rutago.ui.theme.TextGray
 import com.ghettodev.rutago.ui.theme.fondoVerde
 
 val isStart = true
-@Preview
 @Composable
-fun ItemParadas() {
+fun ItemParadas(
+    nombre: String,
+    direccion: String,
+    tipo: String,
+    secuencia: Int = 0,           // ← añade esto
+    isStart: Boolean = false      // ← para saber si es la primera parada
+) {
     Row(
-        modifier = Modifier
-            .fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        //Columnas para dividir en derecha e izquierda
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Icon(
                 if (isStart) Icons.Default.Adjust else Icons.Default.Circle,
-
                 tint = if (isStart) PrimaryGreen else Color.White,
-
                 contentDescription = "Icono circular",
                 modifier = Modifier.size(24.dp)
             )
-
         }
         Card(
             modifier = Modifier
@@ -63,12 +61,9 @@ fun ItemParadas() {
             colors = CardDefaults.cardColors(containerColor = Color.White),
             elevation = CardDefaults.elevatedCardElevation(2.dp)
         ) {
-            Column(
-                modifier = Modifier.padding(10.dp)
-            ) {
-
+            Column(modifier = Modifier.padding(10.dp)) {
                 Text(
-                    text = "Terminal de Autobuses",
+                    text = nombre,   // ← usa el parámetro
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold
                 )
@@ -77,8 +72,8 @@ fun ItemParadas() {
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Start
                 ) {
-                    Text(//aca va texto
-                        text = "Parada 1",
+                    Text(
+                        text = "$direccion - Parada $secuencia",  // ← usa los parámetros
                         color = TextGray,
                         fontSize = 10.sp
                     )
@@ -93,10 +88,8 @@ fun ItemParadas() {
                                     color = fondoVerde,
                                     shape = RoundedCornerShape(10.dp)
                                 )
-                                .padding(horizontal = 8.dp, vertical = 2.dp),
-
-
-                            )
+                                .padding(horizontal = 8.dp, vertical = 2.dp)
+                        )
                     }
                 }
             }

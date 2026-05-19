@@ -5,13 +5,21 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "ruta")
 data class Ruta(
-    @PrimaryKey(autoGenerate = true) val idRuta: Int,
+    @PrimaryKey(autoGenerate = true)
+    val idRuta: Int = 0,
     val nombreRuta: String,
     val nRuta: Int,
+    val rutaKey: String,                    // RA-02
     val color: String,
-    val descripcion: String,
-    val activo: Boolean,
-    val origen: String,
-    val destino: String,
-    val geoJsonPolyline: String? = null
+    val descripcion: String = "",
+    val origen: String = "Terminal",
+    val destino: String = "Terminal",
+    val geoJsonPolyline: String? = null,   // GeoJSON completo
+    val totalParadas: Int = 0,
+    val idaCount: Int = 0,
+    val regresoCount: Int = 0,
+    val baseCount: Int = 0,
+    val terminalCount: Int = 0,
+    val activo: Boolean = true,
+    val fechaCarga: Long = System.currentTimeMillis()
 )

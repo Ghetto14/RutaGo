@@ -47,6 +47,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.compose.remote.creation.core)
     // Core & Lifecycle
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -62,8 +63,12 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.compose.foundation.layout)
     implementation("androidx.compose.material:material-icons-extended:1.7.0")
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
 
     // MapLibre
+    implementation(libs.maplibre.compose)
+    implementation(libs.maplibre.compose.material3)
     implementation(libs.maplibre.compose)
     implementation(libs.maplibre.compose.material3)
     // Para pedir permisos en runtime
@@ -79,6 +84,7 @@ dependencies {
     // Room Database
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
+    implementation(libs.ui)
     ksp(libs.androidx.room.compiler)
 
     // Testing
