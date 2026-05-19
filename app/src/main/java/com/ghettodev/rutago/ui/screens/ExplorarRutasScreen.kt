@@ -11,15 +11,28 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.ghettodev.rutago.data.repository.RutasRepository
 import com.ghettodev.rutago.ui.components.MapItem
+import com.ghettodev.rutago.viewmodel.RutaViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ERutasS(
+    rutaRepository: RutasRepository,
     onReporteClic: () -> Unit = {}
 ) {
     var searchText by remember { mutableStateOf("") }
     var isSearchActive by remember { mutableStateOf(false) }
+    val rutaViewModel: RutaViewModel = viewModel(
+        factory = object : ViewModelProvider.Factory {
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
+                return RutaViewModel(rutaRepository) as T
+            }
+        }
+    )
 
     Box(modifier = Modifier.fillMaxSize()) {
         // Mapa (funcional)

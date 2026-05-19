@@ -65,9 +65,8 @@ fun NavigationWrapper() {
         // 🗺️ MAPA
         composable("explorar_rutas") {
             ERutasS(
-                onReporteClic = {
-                    navController.navigate("reporte")
-                }
+                rutaRepository = rutaRepository,
+                onReporteClic = { navController.navigate("reporte") }
             )
         }
 
