@@ -7,7 +7,7 @@ import java.io.InputStream
 
 class GeoJsonParser {
 
-    fun parse(inputStream: InputStream): RutaParseResult {
+    fun parse(inputStream: InputStream, idRuta: Int = 0): RutaParseResult {
         val jsonString = inputStream.bufferedReader().use { it.readText() }
         val root = JsonParser.parseString(jsonString).asJsonObject
 
@@ -15,7 +15,7 @@ class GeoJsonParser {
         val ruta = Ruta(
             nombreRuta = props?.get("ruta")?.asString ?: "",
             nRuta = safeInt(props, "rutaNumero"),
-            rutaKey = props?.get("ruta")?.asString ?: "",
+            rutaKey = props?.get("ruta")?.asString?.lowercase() ?: "",
             color = "#FF6600",
             totalParadas = safeInt(props, "totalParadas"),
             idaCount = safeInt(props, "idaCount"),
@@ -31,13 +31,11 @@ class GeoJsonParser {
             val feature = featureElement.asJsonObject
             val geometry = feature.getAsJsonObject("geometry")
             val coordinatesArray = geometry.getAsJsonArray("coordinates")
-            // Solo tomamos los dos primeros valores
             val lon = coordinatesArray[0].asDouble
             val lat = coordinatesArray[1].asDouble
 
             val p = feature.getAsJsonObject("properties")
 
-            // Manejo seguro de conexiones
             val conexiones = when {
                 p.has("conexiones") && p.get("conexiones").isJsonArray -> {
                     p.getAsJsonArray("conexiones").joinToString(",") { it.asString }
@@ -48,8 +46,11 @@ class GeoJsonParser {
                 else -> ""
             }
 
+            val idParadaOriginal = safeInt(p, "idParada")
+            val idParadaFinal = if (idRuta > 0) idRuta * 10000 + idParadaOriginal else idParadaOriginal
+
             val parada = Parada(
-                idParada = safeInt(p, "idParada"),
+                idParada = idParadaFinal,
                 nombre = p.get("nombre")?.asString ?: "",
                 tipoParada = p.get("tipoParada")?.asString ?: "",
                 latitud = lat,

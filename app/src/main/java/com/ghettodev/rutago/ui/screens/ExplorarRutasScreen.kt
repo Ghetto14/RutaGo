@@ -50,7 +50,7 @@ fun ERutasS(
     var searchText by remember { mutableStateOf("") }
     var isSearchActive by remember { mutableStateOf(false) }
 
-    // Mostrar Toast cuando se cargan paradas exitosamente
+    // Toast cuando se cargan paradas exitosamente
     LaunchedEffect(uiState.paradasMostradas) {
         if (uiState.paradasMostradas.isNotEmpty()) {
             Toast.makeText(
@@ -61,7 +61,7 @@ fun ERutasS(
         }
     }
 
-    // Mostrar Toast cuando hay error (además del Card)
+    // Toast cuando hay error
     LaunchedEffect(uiState.error) {
         if (uiState.error != null) {
             Toast.makeText(
@@ -73,12 +73,10 @@ fun ERutasS(
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
-        // Mapa (aún sin puntos)
+        // Mapa sin puntos (todavía)
         MapItem(
-            paradas = emptyList(),
             modifier = Modifier.fillMaxSize()
         )
-
         // Barra de búsqueda
         Column(modifier = Modifier.padding(8.dp).fillMaxWidth()) {
             SearchBar(
@@ -88,7 +86,6 @@ fun ERutasS(
                     isSearchActive = false
                     if (searchText.isNotBlank()) {
                         val rutaKey = formatRutaKey(searchText)
-                        // Toast de inicio de búsqueda
                         Toast.makeText(context, "🔍 Buscando ruta: $rutaKey", Toast.LENGTH_SHORT).show()
                         rutaViewModel.cargarRuta(context, rutaKey)
                     }
@@ -111,7 +108,7 @@ fun ERutasS(
             ) {}
         }
 
-        // Botón de reporte
+        // Botón reporte
         FloatingActionButton(
             onClick = onReporteClic,
             modifier = Modifier
@@ -122,7 +119,7 @@ fun ERutasS(
             Icon(Icons.Default.Warning, contentDescription = "Reportar", tint = Color.White)
         }
 
-        // Mensaje de error (card)
+        // Mensaje de error en card (por si acaso)
         if (uiState.error != null) {
             Card(
                 modifier = Modifier

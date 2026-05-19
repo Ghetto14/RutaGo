@@ -35,10 +35,11 @@ class RutaViewModel(
                 }
 
             } catch (e: Exception) {
-                _uiState.update {
-                    it.copy(error = e.message)
-                }
+            android.util.Log.e("RUTAGO_VM", "Error en cargarRuta", e)
+            _uiState.update {
+                it.copy(error = e.message ?: e.javaClass.simpleName)
             }
+        }
         }
     }
 

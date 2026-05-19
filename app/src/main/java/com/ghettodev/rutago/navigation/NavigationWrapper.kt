@@ -63,13 +63,13 @@ fun NavigationWrapper() {
         }
 
         // 🗺️ MAPA
+        // Dentro de NavHost, en la ruta "explorar_rutas":
         composable("explorar_rutas") {
             ERutasS(
-                rutaRepository = rutaRepository,
+                rutaRepository = rutaRepository,   // ← pasamos el repositorio
                 onReporteClic = { navController.navigate("reporte") }
             )
         }
-
         // 📍 DETALLE
         composable("rutas_populares") {
             DetalleParada(
