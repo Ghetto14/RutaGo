@@ -55,11 +55,11 @@ fun NavigationWrapper() {
         // 🏠 HOME
         composable("main") {
             HomeScreen(
-                onExplorarRutas = {
-                    navController.navigate("explorar_rutas")
-                },
-                onVerTodas = {
-                    navController.navigate("rutas_populares")
+                rutaRepository = rutaRepository,
+                onExplorarRutas = { navController.navigate("explorar_rutas") },
+                onVerTodas = { navController.navigate("rutas_populares") },
+                onRutaClick = { idRuta ->
+                    navController.navigate("detalle_ruta/$idRuta")
                 }
             )
         }

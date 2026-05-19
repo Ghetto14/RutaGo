@@ -1,52 +1,41 @@
 package com.ghettodev.rutago.ui.components
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AirportShuttle
 import androidx.compose.material.icons.filled.Schedule
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ghettodev.rutago.data.entity.Ruta
 import com.ghettodev.rutago.ui.theme.PrimaryGreen
 import com.ghettodev.rutago.ui.theme.TextGray
 import com.ghettodev.rutago.ui.theme.backgroundAltaDemanda
 import com.ghettodev.rutago.ui.theme.fondoVerde
 import com.ghettodev.rutago.ui.theme.textAltaDemanda
 
-@Preview
 @Composable
-fun cardRutasPopulares(
-    //atributos
+fun CardRutasPopulares(
+    ruta: Ruta,
+    onCardClick: () -> Unit = {}
 ) {
-    //hijos
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.White)
+            .padding(8.dp)
+            .clickable { onCardClick() },
+        colors = CardDefaults.cardColors(containerColor = Color.White),
+        elevation = CardDefaults.cardElevation(4.dp)
     ) {
-        //fila para mover los componentes a las orillas
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -54,13 +43,10 @@ fun cardRutasPopulares(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.Top
         ) {
-            //columna de izquierda
             Column(modifier = Modifier.weight(1f)) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(//lleva variable
-                        text = "Ruta 2",//routName
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        text = ruta.nombreRuta,
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold
                     )
@@ -69,64 +55,54 @@ fun cardRutasPopulares(
                         Icons.Default.Star,
                         contentDescription = "Icono estrella",
                         tint = Color(0xFFFFC107),
-                        modifier = Modifier
-                            .size(18.dp)
+                        modifier = Modifier.size(18.dp)
                     )
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text(//lleva variable
+                    Text(
                         text = "4.5",
                         fontSize = 12.sp,
                         fontWeight = FontWeight.SemiBold
                     )
                 }
                 Spacer(modifier = Modifier.height(10.dp))
-                Text(//aca va a llevar variable
-
-                    text = "Xoxo",//destination
+                Text(
+                    text = "${ruta.totalParadas} paradas",
                     color = TextGray
                 )
                 Spacer(modifier = Modifier.height(10.dp))
-                Row(
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
                     Icon(
                         Icons.Default.Schedule,
                         contentDescription = "Icono de reloj",
                         tint = TextGray
                     )
                     Spacer(modifier = Modifier.width(5.dp))
-                    Text(//aca va variable
-                        text = "12 min",
+                    Text(
+                        text = "≈ ${ruta.totalParadas * 2} min",
                         fontSize = 15.sp,
                         color = TextGray
                     )
                     Spacer(modifier = Modifier.width(20.dp))
-                    Text(//aqui va una variable
-
-                        text = "Alta demanda",
+                    val demanda = if (ruta.totalParadas > 80) "Alta demanda" else "Demanda normal"
+                    Text(
+                        text = demanda,
                         color = textAltaDemanda,
                         modifier = Modifier
                             .background(
                                 color = backgroundAltaDemanda,
-                                shape = RoundedCornerShape(15.dp),
-
-                                )
+                                shape = RoundedCornerShape(15.dp)
+                            )
                             .padding(7.dp),
                         fontSize = 15.sp,
                         fontWeight = FontWeight.SemiBold
                     )
-
                 }
             }
-            //logo autobus
-            Surface (
-                modifier = Modifier
-                    .size(50.dp),
+            Surface(
+                modifier = Modifier.size(50.dp),
                 color = fondoVerde,
-                shape = RoundedCornerShape(12.dp),
-
-
-            ){
+                shape = RoundedCornerShape(12.dp)
+            ) {
                 Icon(
                     Icons.Default.AirportShuttle,
                     contentDescription = "Logo de autobus",

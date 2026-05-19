@@ -1,0 +1,1609 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "ruta": "RA-14",
+    "rutaNumero": "14",
+    "totalParadas": 84,
+    "idaCount": 37,
+    "regresoCount": 45,
+    "baseCount": 2
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.68918,
+          17.04748
+        ]
+      },
+      "properties": {
+        "idParada": 1,
+        "nombre": "Terminal Base Mercado Montoya",
+        "tipoParada": "base",
+        "direccion": "TERMINAL",
+        "secuencia": 1,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.68945,
+          17.0482
+        ]
+      },
+      "properties": {
+        "idParada": 2,
+        "nombre": "Miguel Méndez",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 2,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.68985,
+          17.0488
+        ]
+      },
+      "properties": {
+        "idParada": 3,
+        "nombre": "Mercado Montoya",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 3,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6905,
+          17.0494
+        ]
+      },
+      "properties": {
+        "idParada": 4,
+        "nombre": "Ignacio Mejía",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 4,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6912,
+          17.05
+        ]
+      },
+      "properties": {
+        "idParada": 5,
+        "nombre": "Antonio de León",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 5,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6918,
+          17.0506
+        ]
+      },
+      "properties": {
+        "idParada": 6,
+        "nombre": "Parque Centenario Montoya",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 6,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6923,
+          17.051
+        ]
+      },
+      "properties": {
+        "idParada": 7,
+        "nombre": "Lima",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 7,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6928,
+          17.0514
+        ]
+      },
+      "properties": {
+        "idParada": 8,
+        "nombre": "Tierra y Libertad",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 8,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6932,
+          17.0518
+        ]
+      },
+      "properties": {
+        "idParada": 9,
+        "nombre": "Esmeralda",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 9,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6936,
+          17.0522
+        ]
+      },
+      "properties": {
+        "idParada": 10,
+        "nombre": "Del Panteón",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 10,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6942,
+          17.0529
+        ]
+      },
+      "properties": {
+        "idParada": 11,
+        "nombre": "Macedonio Alcalá",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 11,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6948,
+          17.0536
+        ]
+      },
+      "properties": {
+        "idParada": 12,
+        "nombre": "Itandehui",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 12,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6954,
+          17.0542
+        ]
+      },
+      "properties": {
+        "idParada": 13,
+        "nombre": "Mixcóatl",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 13,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6962,
+          17.0549
+        ]
+      },
+      "properties": {
+        "idParada": 14,
+        "nombre": "Monte Albán",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 14,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.697,
+          17.0554
+        ]
+      },
+      "properties": {
+        "idParada": 15,
+        "nombre": "Av. Mexicápam",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 15,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6978,
+          17.0558
+        ]
+      },
+      "properties": {
+        "idParada": 16,
+        "nombre": "Sierra Juárez",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 16,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6988,
+          17.0563
+        ]
+      },
+      "properties": {
+        "idParada": 17,
+        "nombre": "Puente Valerio Trujano",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 17,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7002,
+          17.0568
+        ]
+      },
+      "properties": {
+        "idParada": 18,
+        "nombre": "De Mercaderes",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 18,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.702,
+          17.057
+        ]
+      },
+      "properties": {
+        "idParada": 19,
+        "nombre": "Central de Abasto",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 19,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7038,
+          17.0569
+        ]
+      },
+      "properties": {
+        "idParada": 20,
+        "nombre": "Guadalupe Victoria",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 20,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7054,
+          17.0566
+        ]
+      },
+      "properties": {
+        "idParada": 21,
+        "nombre": "Mier y Terán",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 21,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.707,
+          17.0562
+        ]
+      },
+      "properties": {
+        "idParada": 22,
+        "nombre": "Valerio Trujano",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 22,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7085,
+          17.0558
+        ]
+      },
+      "properties": {
+        "idParada": 23,
+        "nombre": "Mina",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 23,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.71,
+          17.0554
+        ]
+      },
+      "properties": {
+        "idParada": 24,
+        "nombre": "J.P. García",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 24,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7115,
+          17.0549
+        ]
+      },
+      "properties": {
+        "idParada": 25,
+        "nombre": "Miguel Cabrera",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 25,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.713,
+          17.0542
+        ]
+      },
+      "properties": {
+        "idParada": 26,
+        "nombre": "Xóchitl",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 26,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7146,
+          17.0534
+        ]
+      },
+      "properties": {
+        "idParada": 27,
+        "nombre": "La Noria",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 27,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.716,
+          17.0526
+        ]
+      },
+      "properties": {
+        "idParada": 28,
+        "nombre": "Xicoténcatl",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 28,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7175,
+          17.0518
+        ]
+      },
+      "properties": {
+        "idParada": 29,
+        "nombre": "Santos Degollado",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 29,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.719,
+          17.051
+        ]
+      },
+      "properties": {
+        "idParada": 30,
+        "nombre": "Emiliano Zapata",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 30,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7206,
+          17.0502
+        ]
+      },
+      "properties": {
+        "idParada": 31,
+        "nombre": "Rayón",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 31,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7222,
+          17.0492
+        ]
+      },
+      "properties": {
+        "idParada": 32,
+        "nombre": "Plan de Ayala",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 32,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7238,
+          17.0482
+        ]
+      },
+      "properties": {
+        "idParada": 33,
+        "nombre": "Parque Los Conos",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 33,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7254,
+          17.0472
+        ]
+      },
+      "properties": {
+        "idParada": 34,
+        "nombre": "Prolongación de la Noria",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 34,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.727,
+          17.0462
+        ]
+      },
+      "properties": {
+        "idParada": 35,
+        "nombre": "Río Salado",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 35,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7286,
+          17.0453
+        ]
+      },
+      "properties": {
+        "idParada": 36,
+        "nombre": "Esc. Sec. Téc. N° 139",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 36,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7302,
+          17.0444
+        ]
+      },
+      "properties": {
+        "idParada": 37,
+        "nombre": "Laureles",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 37,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7318,
+          17.0436
+        ]
+      },
+      "properties": {
+        "idParada": 38,
+        "nombre": "Venecia",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 38,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7334,
+          17.0429
+        ]
+      },
+      "properties": {
+        "idParada": 39,
+        "nombre": "Crucero del Rosario",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 39,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.735,
+          17.0422
+        ]
+      },
+      "properties": {
+        "idParada": 40,
+        "nombre": "Del Rosario",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 40,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7365,
+          17.0415
+        ]
+      },
+      "properties": {
+        "idParada": 41,
+        "nombre": "Cuatro",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 41,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.738,
+          17.0407
+        ]
+      },
+      "properties": {
+        "idParada": 42,
+        "nombre": "Circuito Sur",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 42,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7394,
+          17.0399
+        ]
+      },
+      "properties": {
+        "idParada": 43,
+        "nombre": "Juchatengo",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 43,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.741,
+          17.0391
+        ]
+      },
+      "properties": {
+        "idParada": 44,
+        "nombre": "Tehuantepec",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 44,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7426,
+          17.0383
+        ]
+      },
+      "properties": {
+        "idParada": 45,
+        "nombre": "Tejupan",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 45,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7442,
+          17.0376
+        ]
+      },
+      "properties": {
+        "idParada": 46,
+        "nombre": "Tequisistlán",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 46,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.75453,
+          17.07066
+        ]
+      },
+      "properties": {
+        "idParada": 47,
+        "nombre": "Terminal Base El Rosario 5ª Etapa",
+        "tipoParada": "base",
+        "direccion": "TERMINAL",
+        "secuencia": 47,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7458,
+          17.037
+        ]
+      },
+      "properties": {
+        "idParada": 48,
+        "nombre": "Mercado Municipal Luis Donaldo Colosio",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 48,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.743,
+          17.0378
+        ]
+      },
+      "properties": {
+        "idParada": 49,
+        "nombre": "Santo Domingo",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 49,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7414,
+          17.0387
+        ]
+      },
+      "properties": {
+        "idParada": 50,
+        "nombre": "Circuito Oriente 1",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 50,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7398,
+          17.0395
+        ]
+      },
+      "properties": {
+        "idParada": 51,
+        "nombre": "URSE Puerta 2",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 51,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7382,
+          17.0404
+        ]
+      },
+      "properties": {
+        "idParada": 52,
+        "nombre": "Rosa Morada",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 52,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7366,
+          17.0413
+        ]
+      },
+      "properties": {
+        "idParada": 53,
+        "nombre": "Reforma Agraria",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 53,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.735,
+          17.0422
+        ]
+      },
+      "properties": {
+        "idParada": 54,
+        "nombre": "Colón",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 54,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7334,
+          17.0431
+        ]
+      },
+      "properties": {
+        "idParada": 55,
+        "nombre": "16 de Septiembre",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 55,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7318,
+          17.044
+        ]
+      },
+      "properties": {
+        "idParada": 56,
+        "nombre": "Mariano Azuela",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 56,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7301,
+          17.0449
+        ]
+      },
+      "properties": {
+        "idParada": 57,
+        "nombre": "Crucero de Cinco Señores",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 57,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7285,
+          17.0457
+        ]
+      },
+      "properties": {
+        "idParada": 58,
+        "nombre": "Eclipse 70",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 58,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7269,
+          17.0465
+        ]
+      },
+      "properties": {
+        "idParada": 59,
+        "nombre": "González Ortega",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 59,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7253,
+          17.0474
+        ]
+      },
+      "properties": {
+        "idParada": 60,
+        "nombre": "Manuel Doblado",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 60,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7237,
+          17.0484
+        ]
+      },
+      "properties": {
+        "idParada": 61,
+        "nombre": "Bustamante",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 61,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7221,
+          17.0494
+        ]
+      },
+      "properties": {
+        "idParada": 62,
+        "nombre": "Fiallo",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 62,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7205,
+          17.0504
+        ]
+      },
+      "properties": {
+        "idParada": 63,
+        "nombre": "Emiliano Zapata (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 63,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7188,
+          17.0512
+        ]
+      },
+      "properties": {
+        "idParada": 64,
+        "nombre": "20 de Noviembre",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 64,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.717,
+          17.052
+        ]
+      },
+      "properties": {
+        "idParada": 65,
+        "nombre": "Mier y Terán (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 65,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.715,
+          17.053
+        ]
+      },
+      "properties": {
+        "idParada": 66,
+        "nombre": "Guadalupe Victoria (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 66,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.713,
+          17.054
+        ]
+      },
+      "properties": {
+        "idParada": 67,
+        "nombre": "Central de Abasto (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 67,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7105,
+          17.0546
+        ]
+      },
+      "properties": {
+        "idParada": 68,
+        "nombre": "Puente Valerio Trujano (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 68,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7085,
+          17.0551
+        ]
+      },
+      "properties": {
+        "idParada": 69,
+        "nombre": "Sierra Juárez (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 69,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7068,
+          17.0555
+        ]
+      },
+      "properties": {
+        "idParada": 70,
+        "nombre": "Av. Mexicápam (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 70,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.705,
+          17.0558
+        ]
+      },
+      "properties": {
+        "idParada": 71,
+        "nombre": "Monte Albán (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 71,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7034,
+          17.056
+        ]
+      },
+      "properties": {
+        "idParada": 72,
+        "nombre": "Mixcóatl (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 72,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7018,
+          17.0562
+        ]
+      },
+      "properties": {
+        "idParada": 73,
+        "nombre": "Itandehui (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 73,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7002,
+          17.056
+        ]
+      },
+      "properties": {
+        "idParada": 74,
+        "nombre": "Macedonio Alcalá (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 74,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6986,
+          17.0556
+        ]
+      },
+      "properties": {
+        "idParada": 75,
+        "nombre": "Del Panteón (norte)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 75,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6968,
+          17.055
+        ]
+      },
+      "properties": {
+        "idParada": 76,
+        "nombre": "Marcos Pérez",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 76,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6952,
+          17.0542
+        ]
+      },
+      "properties": {
+        "idParada": 77,
+        "nombre": "Margarita Maza",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 77,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6936,
+          17.0532
+        ]
+      },
+      "properties": {
+        "idParada": 78,
+        "nombre": "La Galera",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 78,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6924,
+          17.0524
+        ]
+      },
+      "properties": {
+        "idParada": 79,
+        "nombre": "21 de Marzo",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 79,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6914,
+          17.0514
+        ]
+      },
+      "properties": {
+        "idParada": 80,
+        "nombre": "Artículo 100",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 80,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6904,
+          17.0504
+        ]
+      },
+      "properties": {
+        "idParada": 81,
+        "nombre": "Adolfo López Mateos",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 81,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6898,
+          17.0496
+        ]
+      },
+      "properties": {
+        "idParada": 82,
+        "nombre": "Itandehui (colonia)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 82,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6896,
+          17.0487
+        ]
+      },
+      "properties": {
+        "idParada": 83,
+        "nombre": "Juventino Rosas",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 83,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6894,
+          17.048
+        ]
+      },
+      "properties": {
+        "idParada": 84,
+        "nombre": "Mixcóatl (colonia)",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 84,
+        "ruta": "RA-14",
+        "rutaNumero": "14"
+      }
+    }
+  ]
+}

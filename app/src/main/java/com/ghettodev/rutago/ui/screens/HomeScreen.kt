@@ -1,70 +1,108 @@
 package com.ghettodev.rutago.ui.screens
 
-import com.ghettodev.rutago.R
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Icon
-import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ghettodev.rutago.ui.components.cardRutasPopulares
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.lifecycle.ViewModelProvider
+import com.ghettodev.rutago.R
+import com.ghettodev.rutago.data.entity.Ruta
+import com.ghettodev.rutago.data.repository.RutasRepository
+import com.ghettodev.rutago.ui.components.CardRutasPopulares
 import com.ghettodev.rutago.ui.theme.PrimaryGreen
 import com.ghettodev.rutago.ui.theme.TextGray
 import com.ghettodev.rutago.ui.theme.backgroundC
+import com.ghettodev.rutago.viewmodel.HomeViewModel
 
-
-@Preview
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
-    onExplorarRutas:() -> Unit = {},
-    onVerTodas:() -> Unit = {}
+    rutaRepository: RutasRepository,
+    onExplorarRutas: () -> Unit = {},
+    onVerTodas: () -> Unit = {},
+    onRutaClick: (Int) -> Unit = {}
 ) {
+    val context = LocalContext.current
+
+    val viewModel: HomeViewModel = viewModel(
+        factory = object : ViewModelProvider.Factory {
+            override fun <T : androidx.lifecycle.ViewModel> create(modelClass: Class<T>): T {
+                return HomeViewModel(rutaRepository) as T
+            }
+        }
+    )
+
+    val rutas by viewModel.rutas.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
+
+    // Cargar rutas al iniciar la pantalla
+    LaunchedEffect(Unit) {
+        viewModel.loadRutas()
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(backgroundC)
             .padding(20.dp)
     ) {
+        // Saludo
         Saludo()
-        Spacer(modifier = Modifier.height(24.dp))
-        ButtonAction(
-            onExplorarRutas = {
-                onExplorarRutas()
-            }
-        )
-        Spacer(modifier = Modifier.height(35.dp))
-        RutasTexto(
-            onVerTodas = {
-                onVerTodas()
-            }
-        )
-        Spacer(modifier = Modifier.height(20.dp))
-        cardRutasPopulares()
-    }
 
+        Spacer(modifier = Modifier.height(24.dp))
+
+        // Botones de acción
+        ButtonAction(onExplorarRutas = onExplorarRutas)
+
+        Spacer(modifier = Modifier.height(35.dp))
+
+        // Título "Rutas populares" y botón "Ver todas"
+        RutasTexto(onVerTodas = onVerTodas)
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        // Lista de rutas (solo 3 en el home, pero puedes mostrar todas con rutas.take(3))
+        if (isLoading) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                CircularProgressIndicator()
+            }
+        } else if (rutas.isEmpty()) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text("No hay rutas disponibles.\nBusca una en el mapa primero.")
+            }
+        } else {
+            LazyColumn {
+                items(rutas.take(3)) { ruta ->  // Muestra solo las primeras 3 en el home
+                    CardRutasPopulares(
+                        ruta = ruta,
+                        onCardClick = { onRutaClick(ruta.idRuta) }
+                    )
+                }
+            }
+        }
+    }
 }
 
 @Composable
@@ -74,10 +112,8 @@ fun Saludo() {
         fontSize = 29.sp,
         fontWeight = FontWeight.Bold,
         color = Color.Black
-
     )
     Spacer(modifier = Modifier.height(8.dp))
-
     Text(
         text = "¿A dónde te diriges hoy?",
         fontSize = 16.sp,
@@ -87,13 +123,10 @@ fun Saludo() {
 
 @Composable
 fun ButtonAction(
-    onExplorarRutas:() -> Unit = {}
+    onExplorarRutas: () -> Unit = {}
 ) {
-    //boton explorar rutas
     Button(
-        onClick = {
-            onExplorarRutas()
-        },
+        onClick = onExplorarRutas,
         modifier = Modifier
             .fillMaxWidth()
             .height(56.dp),
@@ -101,7 +134,6 @@ fun ButtonAction(
             containerColor = PrimaryGreen
         ),
         shape = RoundedCornerShape(12.dp)
-
     ) {
         Icon(
             painter = painterResource(id = R.drawable.location_on),
@@ -125,9 +157,7 @@ fun RutasTexto(
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier
-            .fillMaxWidth()
-        //.padding(16.dp)
+        modifier = Modifier.fillMaxWidth()
     ) {
         Text(
             text = "Rutas populares",
@@ -135,17 +165,11 @@ fun RutasTexto(
             fontWeight = FontWeight.SemiBold,
             color = Color.Black
         )
-
         Text(
-            modifier = Modifier
-                .clickable {
-                    onVerTodas()
-                },
+            modifier = Modifier.clickable { onVerTodas() },
             text = "Ver todas",
             fontSize = 14.sp,
             color = PrimaryGreen
         )
-
     }
 }
-

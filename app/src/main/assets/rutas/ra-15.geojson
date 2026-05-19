@@ -1,0 +1,450 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "ruta": "RA-15",
+    "rutaNumero": "15",
+    "totalParadas": 23,
+    "idaCount": 19,
+    "regresoCount": 4,
+    "baseCount": 4
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7584094,
+          17.05651137
+        ]
+      },
+      "properties": {
+        "idParada": 1,
+        "nombre": "Base Colonia Monte Albán",
+        "tipoParada": "base",
+        "direccion": "IDA",
+        "secuencia": 1,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7554426,
+          17.0544224
+        ]
+      },
+      "properties": {
+        "idParada": 2,
+        "nombre": "Pinopia",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 2,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.753811,
+          17.0550698
+        ]
+      },
+      "properties": {
+        "idParada": 3,
+        "nombre": "Donají",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 3,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7534686,
+          17.05264447
+        ]
+      },
+      "properties": {
+        "idParada": 4,
+        "nombre": "Farmacia",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 4,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7503134,
+          17.053342
+        ]
+      },
+      "properties": {
+        "idParada": 5,
+        "nombre": "Dalachi",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 5,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7486587,
+          17.0554835
+        ]
+      },
+      "properties": {
+        "idParada": 6,
+        "nombre": "Heladio Ramírez",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 6,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.745656,
+          17.0562462
+        ]
+      },
+      "properties": {
+        "idParada": 7,
+        "nombre": "Hierro",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 7,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7430442,
+          17.0585759
+        ]
+      },
+      "properties": {
+        "idParada": 8,
+        "nombre": "4 Caminos",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 8,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.74025379,
+          17.06102157
+        ]
+      },
+      "properties": {
+        "idParada": 9,
+        "nombre": "Sierra Juárez",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 9,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.73713727,
+          17.06136056
+        ]
+      },
+      "properties": {
+        "idParada": 10,
+        "nombre": "Valerio Trujano",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 10,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.73585241,
+          17.05923332
+        ]
+      },
+      "properties": {
+        "idParada": 11,
+        "nombre": "De Mercaderes",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 11,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7339204,
+          17.0605729
+        ]
+      },
+      "properties": {
+        "idParada": 12,
+        "nombre": "Central de Abastos",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 12,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.732167,
+          17.061195
+        ]
+      },
+      "properties": {
+        "idParada": 13,
+        "nombre": "Guadalupe Victoria",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 13,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.729965,
+          17.061057
+        ]
+      },
+      "properties": {
+        "idParada": 14,
+        "nombre": "Mier y Terán",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 14,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.72857,
+          17.06162
+        ]
+      },
+      "properties": {
+        "idParada": 15,
+        "nombre": "Miguel Hidalgo",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 15,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.72622,
+          17.06215
+        ]
+      },
+      "properties": {
+        "idParada": 16,
+        "nombre": "Alameda de León",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 16,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7043345,
+          17.0636453
+        ]
+      },
+      "properties": {
+        "idParada": 23,
+        "nombre": "Centro Cultural y de Convenciones",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 23,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.65331,
+          17.05516
+        ]
+      },
+      "properties": {
+        "idParada": 43,
+        "nombre": "Ciudad Administrativa",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 43,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.62462,
+          17.06005
+        ]
+      },
+      "properties": {
+        "idParada": 63,
+        "nombre": "Santo Domingo Tomaltepec",
+        "tipoParada": "base",
+        "direccion": "IDA",
+        "secuencia": 63,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.62462,
+          17.06005
+        ]
+      },
+      "properties": {
+        "idParada": 64,
+        "nombre": "Santo Domingo Tomaltepec",
+        "tipoParada": "base",
+        "direccion": "REGRESO",
+        "secuencia": 64,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.65331,
+          17.05516
+        ]
+      },
+      "properties": {
+        "idParada": 80,
+        "nombre": "Base Puente Peatonal Cd. Administrativa",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 80,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7339204,
+          17.0605729
+        ]
+      },
+      "properties": {
+        "idParada": 112,
+        "nombre": "Central de Abastos",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 112,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7584094,
+          17.05651137
+        ]
+      },
+      "properties": {
+        "idParada": 120,
+        "nombre": "Base Colonia Monte Albán",
+        "tipoParada": "base",
+        "direccion": "REGRESO",
+        "secuencia": 120,
+        "ruta": "RA-15",
+        "rutaNumero": "15"
+      }
+    }
+  ]
+}

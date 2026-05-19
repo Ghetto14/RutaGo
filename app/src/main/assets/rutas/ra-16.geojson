@@ -1,0 +1,469 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "ruta": "RA-16",
+    "rutaNumero": "16",
+    "totalParadas": 24,
+    "idaCount": 17,
+    "regresoCount": 7,
+    "baseCount": 1
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.76945119983236,
+          17.083321598584874
+        ]
+      },
+      "properties": {
+        "idParada": 1,
+        "nombre": "Origen Manual 1",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 1,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.76887041300007,
+          17.083990760602276
+        ]
+      },
+      "properties": {
+        "idParada": 2,
+        "nombre": "Origen Manual 2",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 2,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7692119,
+          17.0853432
+        ]
+      },
+      "properties": {
+        "idParada": 3,
+        "nombre": "Canadá",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 3,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.76827925,
+          17.08579868
+        ]
+      },
+      "properties": {
+        "idParada": 4,
+        "nombre": "Priv. de la Cañada",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 4,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7685644,
+          17.08725746
+        ]
+      },
+      "properties": {
+        "idParada": 5,
+        "nombre": "Pochutla",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 5,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.76703274,
+          17.0879912
+        ]
+      },
+      "properties": {
+        "idParada": 6,
+        "nombre": "Candelaria Loxicha",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 6,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.76509499,
+          17.08880138
+        ]
+      },
+      "properties": {
+        "idParada": 7,
+        "nombre": "Av. Libertad",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 7,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7638311,
+          17.0866806
+        ]
+      },
+      "properties": {
+        "idParada": 8,
+        "nombre": "Samaria",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 8,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.76240656,
+          17.08402575
+        ]
+      },
+      "properties": {
+        "idParada": 9,
+        "nombre": "Niños Héroes",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 9,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.76086825,
+          17.0814019
+        ]
+      },
+      "properties": {
+        "idParada": 10,
+        "nombre": "Miahutlán",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 10,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.75990859,
+          17.0796874
+        ]
+      },
+      "properties": {
+        "idParada": 11,
+        "nombre": "Ixtepec",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 11,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7584005,
+          17.0771213
+        ]
+      },
+      "properties": {
+        "idParada": 12,
+        "nombre": "Plaza Bella Cinemex",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 12,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.75721254,
+          17.07478538
+        ]
+      },
+      "properties": {
+        "idParada": 13,
+        "nombre": "Plaza Bella",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 13,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7561613,
+          17.0730242
+        ]
+      },
+      "properties": {
+        "idParada": 14,
+        "nombre": "Agencia Montoya",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 14,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.71499024,
+          17.04375866
+        ]
+      },
+      "properties": {
+        "idParada": 31,
+        "nombre": "Plaza Oaxaca",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 31,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7119947,
+          17.04037825
+        ]
+      },
+      "properties": {
+        "idParada": 32,
+        "nombre": "Plaza del Valle",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 32,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.71052765,
+          17.03774416
+        ]
+      },
+      "properties": {
+        "idParada": 33,
+        "nombre": "La Campiña",
+        "tipoParada": "normal",
+        "direccion": "IDA",
+        "secuencia": 33,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.70631791,
+          17.03679222
+        ]
+      },
+      "properties": {
+        "idParada": 34,
+        "nombre": "Base Plaza del Valle",
+        "tipoParada": "base",
+        "direccion": "REGRESO",
+        "secuencia": 34,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.72609898,
+          17.05065848
+        ]
+      },
+      "properties": {
+        "idParada": 44,
+        "nombre": "Periférico",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 44,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.72986414,
+          17.05484049
+        ]
+      },
+      "properties": {
+        "idParada": 46,
+        "nombre": "Nuño del Mercado",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 46,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7692119,
+          17.0853432
+        ]
+      },
+      "properties": {
+        "idParada": 69,
+        "nombre": "Canadá",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 69,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7688669,
+          17.084049
+        ]
+      },
+      "properties": {
+        "idParada": 70,
+        "nombre": "Huajuapam",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 70,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.76827854763276,
+          17.081887580649138
+        ]
+      },
+      "properties": {
+        "idParada": 71,
+        "nombre": "Destino Manual 1",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 71,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.76944598754571,
+          17.08332718423894
+        ]
+      },
+      "properties": {
+        "idParada": 72,
+        "nombre": "Destino Manual 2",
+        "tipoParada": "normal",
+        "direccion": "REGRESO",
+        "secuencia": 72,
+        "ruta": "RA-16",
+        "rutaNumero": "16"
+      }
+    }
+  ]
+}
