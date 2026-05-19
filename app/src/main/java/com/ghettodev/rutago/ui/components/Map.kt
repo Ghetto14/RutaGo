@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.ghettodev.rutago.data.entity.Parada
 import org.maplibre.compose.camera.CameraPosition
 import org.maplibre.compose.camera.rememberCameraState
 import org.maplibre.compose.map.MaplibreMap
@@ -12,6 +13,7 @@ import org.maplibre.spatialk.geojson.Position
 
 @Composable
 fun MapItem(
+    paradas: List<Parada>,   // ← nuevo parámetro, por ahora no usado
     modifier: Modifier = Modifier
 ) {
     val cameraState = rememberCameraState(

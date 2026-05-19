@@ -1,28 +1,17 @@
 package com.ghettodev.rutago.parser
 
-import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import com.ghettodev.rutago.data.entity.Parada
 import com.ghettodev.rutago.data.entity.Ruta
-import org.maplibre.geojson.FeatureCollection
-import org.maplibre.geojson.Point
 import java.io.InputStream
 
 class GeoJsonParser {
 
     fun parse(inputStream: InputStream): RutaParseResult {
-
-        // 🔹 Leer JSON completo
         val jsonString = inputStream.bufferedReader().use { it.readText() }
+        val root = JsonParser.parseString(jsonString).asJsonObject
 
-        // 🔹 Parsear raíz con Gson (para properties generales)
-        val jsonObject = JsonParser.parseString(jsonString).asJsonObject
-        val props = jsonObject.getAsJsonObject("properties")
-
-        // 🔹 Parsear features con MapLibre
-        val featureCollection = FeatureCollection.fromJson(jsonString)
-
-        // 🔹 Crear Ruta
+        val props = root.getAsJsonObject("properties")
         val ruta = Ruta(
             nombreRuta = props?.get("ruta")?.asString ?: "",
             nRuta = safeInt(props, "rutaNumero"),
@@ -35,31 +24,48 @@ class GeoJsonParser {
             terminalCount = safeInt(props, "terminalCount")
         )
 
-        // 🔹 Crear Paradas
-        val paradas = featureCollection.features()?.map { feature ->
+        val featuresArray = root.getAsJsonArray("features")
+        val paradas = mutableListOf<Parada>()
 
-            val geometry = feature.geometry() as Point
-            val p = feature.properties()
+        for (featureElement in featuresArray) {
+            val feature = featureElement.asJsonObject
+            val geometry = feature.getAsJsonObject("geometry")
+            val coordinatesArray = geometry.getAsJsonArray("coordinates")
+            // Solo tomamos los dos primeros valores
+            val lon = coordinatesArray[0].asDouble
+            val lat = coordinatesArray[1].asDouble
 
-            Parada(
+            val p = feature.getAsJsonObject("properties")
+
+            // Manejo seguro de conexiones
+            val conexiones = when {
+                p.has("conexiones") && p.get("conexiones").isJsonArray -> {
+                    p.getAsJsonArray("conexiones").joinToString(",") { it.asString }
+                }
+                p.has("conexiones") && p.get("conexiones").isJsonPrimitive -> {
+                    p.get("conexiones").asString
+                }
+                else -> ""
+            }
+
+            val parada = Parada(
                 idParada = safeInt(p, "idParada"),
-                nombre = p?.get("nombre")?.asString ?: "",
-                tipoParada = p?.get("tipoParada")?.asString ?: "",
-                latitud = geometry.latitude(),
-                longitud = geometry.longitude(),
-                color = p?.get("color")?.asString ?: "#FF0000",
-                direccion = p?.get("direccion")?.asString ?: "",
+                nombre = p.get("nombre")?.asString ?: "",
+                tipoParada = p.get("tipoParada")?.asString ?: "",
+                latitud = lat,
+                longitud = lon,
+                color = p.get("color")?.asString ?: "#FF0000",
+                direccion = p.get("direccion")?.asString ?: "",
                 secuencia = safeInt(p, "secuencia"),
-                conexiones = p?.get("conexiones")?.asString ?: ""
+                conexiones = conexiones
             )
-
-        } ?: emptyList()
+            paradas.add(parada)
+        }
 
         return RutaParseResult(ruta, paradas)
     }
 
-    // 🔹 Función segura para Int (evita crashes por tipos mixtos)
-    private fun safeInt(json: JsonObject?, key: String): Int {
+    private fun safeInt(json: com.google.gson.JsonObject?, key: String): Int {
         return try {
             json?.get(key)?.asInt ?: 0
         } catch (e: Exception) {
