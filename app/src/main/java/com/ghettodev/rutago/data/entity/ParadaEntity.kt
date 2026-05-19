@@ -8,7 +8,7 @@ data class Parada(
     @PrimaryKey
     val idParada: Int,                      // NO autoGenerate
     val tipoParada: String,
-    val nombreParada: String,
+    val nombre: String,
     val latitud: Double,
     val longitud: Double,
     val color: String,

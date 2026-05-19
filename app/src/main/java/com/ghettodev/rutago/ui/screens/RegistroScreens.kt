@@ -1,5 +1,6 @@
 package com.ghettodev.rutago.ui.screens
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -15,6 +16,7 @@ import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -32,7 +34,6 @@ import com.ghettodev.rutago.domain.validator.AuthValidator
 fun RegisterScreen(
     onRegisterClick: (String, String, String, String) -> Unit = { _, _, _, _ -> },
     onBack: () -> Unit = {},
-
 ) {
     var nombre by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
@@ -42,6 +43,9 @@ fun RegisterScreen(
 
     var passwordVisible by remember { mutableStateOf(false) }
     var confirmarPasswordVisible by remember { mutableStateOf(false) }
+
+    // 🔹 Contexto para Toast
+    val context = LocalContext.current
 
     // Lógica de validación
     val isNombreValido = AuthValidator.isValidName(nombre)
@@ -80,7 +84,7 @@ fun RegisterScreen(
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // NOMBRE
+        //nombre
         OutlinedTextField(
             value = nombre,
             onValueChange = { nombre = it },
@@ -146,7 +150,6 @@ fun RegisterScreen(
 
         Spacer(modifier = Modifier.height(12.dp))
 
-
         OutlinedTextField(
             value = confirmarPassword,
             onValueChange = { confirmarPassword = it },
@@ -169,16 +172,34 @@ fun RegisterScreen(
         )
 
         if (confirmarPassword.isNotEmpty() && !lasContrasenasCoinciden) {
-            Text("Las contraseñas no coinciden", color = Color.Red, fontSize = 12.sp, modifier = Modifier.align(Alignment.Start))
+            Text(
+                "Las contraseñas no coinciden",
+                color = Color.Red,
+                fontSize = 12.sp,
+                modifier = Modifier.align(Alignment.Start)
+            )
         }
 
         Spacer(modifier = Modifier.height(32.dp))
 
-
         Button(
-            onClick = { onRegisterClick(nombre, email, telefono, password) },
+            onClick = {
+                onRegisterClick(nombre, email, telefono, password)
+
+                // 🔹 Toast de éxito
+                Toast.makeText(context, "Usuario creado con éxito", Toast.LENGTH_SHORT).show()
+
+                // 🔹 Limpiar campos
+                nombre = ""
+                email = ""
+                telefono = ""
+                password = ""
+                confirmarPassword = ""
+            },
             enabled = formularioValido,
-            modifier = Modifier.fillMaxWidth().height(50.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(50.dp),
             shape = RoundedCornerShape(12.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = colorPrimario,

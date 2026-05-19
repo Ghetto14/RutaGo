@@ -36,17 +36,56 @@ interface RutaDao {
     suspend fun deleteRuta(idRuta: Int)
 }
 
+
+
 @Dao
 interface ParadaDao {
+
+    // 🔹 Insertar una parada
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertParada(parada: Parada): Long
 
+    // 🔹 Insertar múltiples (IMPORTANTE para GeoJSON)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertParadas(paradas: List<Parada>): List<Long>
+
+    // 🔹 Obtener por ID
     @Query("SELECT * FROM parada WHERE idParada = :idParada")
     suspend fun getParadaById(idParada: Int): Parada?
 
+    // 🔹 Obtener todas
+    @Query("SELECT * FROM parada")
+    suspend fun getAllParadas(): List<Parada>
+
+    // 🔹 Obtener por tipo (base, normal, etc.)
+    @Query("SELECT * FROM parada WHERE tipoParada = :tipo")
+    suspend fun getParadasPorTipo(tipo: String): List<Parada>
+
+    // 🔹 Obtener cercanas (útil para tu buscador)
+    @Query("""
+        SELECT * FROM parada 
+        WHERE (
+            (latitud - :lat) * (latitud - :lat) + 
+            (longitud - :lng) * (longitud - :lng)
+        ) < (:radio * :radio)
+        ORDER BY 
+            (latitud - :lat) * (latitud - :lat) + 
+            (longitud - :lng) * (longitud - :lng)
+        LIMIT :limite
+    """)
+    suspend fun getParadasCercanas(
+        lat: Double,
+        lng: Double,
+        radio: Double,
+        limite: Int = 10
+    ): List<Parada>
+
+    // 🔹 Eliminar (opcional)
     @Query("DELETE FROM parada WHERE idParada = :idParada")
     suspend fun deleteParada(idParada: Int)
 }
+
+
 
 @Dao
 interface RutaParadaDao {
@@ -59,3 +98,4 @@ interface RutaParadaDao {
     @Query("DELETE FROM ruta_parada WHERE idRuta = :idRuta")
     suspend fun deleteRutaParadas(idRuta: Int)
 }
+

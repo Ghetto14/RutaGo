@@ -67,6 +67,8 @@ dependencies {
     // MapLibre
     implementation(libs.maplibre.compose)
     implementation(libs.maplibre.compose.material3)
+    implementation(libs.maplibre.compose)
+    implementation(libs.maplibre.compose.material3)
     // Para pedir permisos en runtime
     implementation("androidx.activity:activity-compose:1.9.0")
     // Para acceder a ubicación del dispositivo
@@ -80,6 +82,7 @@ dependencies {
     // Room Database
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
+    implementation(libs.ui)
     ksp(libs.androidx.room.compiler)
 
     // Testing
