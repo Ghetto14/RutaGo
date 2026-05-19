@@ -1,9 +1,12 @@
 package com.ghettodev.rutago.navigation
 
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
+import androidx.navigation.NavType
 import androidx.navigation.compose.*
+import androidx.navigation.navArgument
 
 import com.ghettodev.rutago.data.location.LocationService
 import com.ghettodev.rutago.data.repository.RutasRepository
@@ -72,11 +75,27 @@ fun NavigationWrapper() {
         }
         // 📍 DETALLE
         composable("rutas_populares") {
-            DetalleParada(
-                onBack = {
-                    navController.popBackStack()
-                }
+            RutasPopularesScreen(
+                rutaRepository = rutaRepository,
+                onRutaClick = { idRuta ->
+                    navController.navigate("detalle_ruta/$idRuta")
+                },
+                onBack = { navController.popBackStack() }
             )
+        }
+
+        composable(
+            "detalle_ruta/{idRuta}",
+            arguments = listOf(navArgument("idRuta") { type = NavType.IntType })
+        ) { backStackEntry ->
+            val idRuta = backStackEntry.arguments?.getInt("idRuta")
+            if (idRuta != null) {
+                DetalleParada(
+                    idRuta = idRuta,
+                    rutaRepository = rutaRepository,
+                    onBack = { navController.popBackStack() }
+                )
+            }
         }
 
         // 📝 REGISTRO

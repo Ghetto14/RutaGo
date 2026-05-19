@@ -60,7 +60,7 @@ fun cardRutasPopulares(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(//lleva variable
-                        text = "Ruta 5",//routName
+                        text = "Ruta 2",//routName
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold
                     )
@@ -82,7 +82,7 @@ fun cardRutasPopulares(
                 Spacer(modifier = Modifier.height(10.dp))
                 Text(//aca va a llevar variable
 
-                    text = "Centro Historico",//destination
+                    text = "Xoxo",//destination
                     color = TextGray
                 )
                 Spacer(modifier = Modifier.height(10.dp))

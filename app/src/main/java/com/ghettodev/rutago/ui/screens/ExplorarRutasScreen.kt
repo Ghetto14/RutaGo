@@ -17,8 +17,13 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.ghettodev.rutago.data.repository.RutasRepository
-import com.ghettodev.rutago.ui.components.MapItem
+import com.ghettodev.rutago.ui.components.PointsOverlay
 import com.ghettodev.rutago.viewmodel.RutaViewModel
+import org.maplibre.compose.camera.CameraPosition
+import org.maplibre.compose.camera.rememberCameraState
+import org.maplibre.compose.map.MaplibreMap
+import org.maplibre.compose.style.BaseStyle
+import org.maplibre.spatialk.geojson.Position
 
 fun formatRutaKey(input: String): String {
     val text = input.trim()
@@ -50,6 +55,14 @@ fun ERutasS(
     var searchText by remember { mutableStateOf("") }
     var isSearchActive by remember { mutableStateOf(false) }
 
+    // Estado de la cámara compartido entre el mapa y los puntos
+    val cameraState = rememberCameraState(
+        firstPosition = CameraPosition(
+            target = Position(-96.744502, 17.076723),
+            zoom = 14.0
+        )
+    )
+
     // Toast cuando se cargan paradas exitosamente
     LaunchedEffect(uiState.paradasMostradas) {
         if (uiState.paradasMostradas.isNotEmpty()) {
@@ -73,11 +86,23 @@ fun ERutasS(
     }
 
     Box(modifier = Modifier.fillMaxSize()) {
-        // Mapa sin puntos (todavía)
-        MapItem(
-            modifier = Modifier.fillMaxSize()
+        // 1. MAPA (sin puntos)
+        MaplibreMap(
+            modifier = Modifier.fillMaxSize(),
+            cameraState = cameraState,
+            baseStyle = BaseStyle.Uri("https://tiles.openfreemap.org/styles/liberty")
         )
-        // Barra de búsqueda
+
+        // 2. CAPA DE PUNTOS SUPERPUESTA (solo si hay paradas)
+        if (uiState.paradasMostradas.isNotEmpty()) {
+            PointsOverlay(
+                paradas = uiState.paradasMostradas,
+                cameraState = cameraState,
+                modifier = Modifier.fillMaxSize()
+            )
+        }
+
+        // 3. BARRA DE BÚSQUEDA
         Column(modifier = Modifier.padding(8.dp).fillMaxWidth()) {
             SearchBar(
                 query = searchText,
@@ -108,7 +133,7 @@ fun ERutasS(
             ) {}
         }
 
-        // Botón reporte
+        // 4. BOTÓN DE REPORTE
         FloatingActionButton(
             onClick = onReporteClic,
             modifier = Modifier
@@ -119,7 +144,7 @@ fun ERutasS(
             Icon(Icons.Default.Warning, contentDescription = "Reportar", tint = Color.White)
         }
 
-        // Mensaje de error en card (por si acaso)
+        // 5. MENSAJE DE ERROR (CARD)
         if (uiState.error != null) {
             Card(
                 modifier = Modifier

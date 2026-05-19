@@ -6,6 +6,7 @@ import com.ghettodev.rutago.data.dao.ParadaDao
 import com.ghettodev.rutago.data.dao.RutaDao
 import com.ghettodev.rutago.data.dao.RutaParadaDao
 import com.ghettodev.rutago.data.entity.Parada
+import com.ghettodev.rutago.data.entity.Ruta
 import com.ghettodev.rutago.data.entity.RutaParada
 import com.ghettodev.rutago.parser.GeoJsonParser
 
@@ -93,5 +94,14 @@ class RutasRepository(
             Log.e(TAG, "ERROR en obtenerParadasDeRuta", e)
             throw e
         }
+    }
+
+    // En RutasRepository.kt
+    suspend fun getRutaById(idRuta: Int): Ruta? {
+        return rutaDao.getRutaById(idRuta) // ya existe en RutaDao
+    }
+
+    suspend fun getAllRutasActivas(): List<Ruta> {
+        return rutaDao.getAllRutasActivas()
     }
 }

@@ -1,201 +1,116 @@
 package com.ghettodev.rutago.ui.screens
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.LocationOn
-import androidx.compose.material.icons.filled.Schedule
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.material.icons.filled.NavigateNext
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.ghettodev.rutago.ui.components.ItemParadas
-import com.ghettodev.rutago.ui.components.ProximoBus
-import com.ghettodev.rutago.ui.theme.PrimaryGreen
-import com.ghettodev.rutago.ui.theme.blur
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.lifecycle.ViewModelProvider
+import com.ghettodev.rutago.data.repository.RutasRepository
+import com.ghettodev.rutago.viewmodel.RutasPopularesViewModel
 
-@Preview
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetalleParada(
-    onBack: () -> Unit = {}
+fun RutasPopularesScreen(
+    rutaRepository: RutasRepository,
+    onRutaClick: (Int) -> Unit,
+    onBack: () -> Unit
 ) {
-    Box {
-        Column (
-            modifier = Modifier
-                .background(Color.White)
-        ){
-            Box(
-                modifier = Modifier
-                    .background(PrimaryGreen)
-                    .fillMaxWidth()
-                    .padding(
-                        horizontal = 15.dp,
-                        vertical = 25.dp
-                    )
+    val viewModel: RutasPopularesViewModel = viewModel(
+        factory = object : ViewModelProvider.Factory {
+            override fun <T : androidx.lifecycle.ViewModel> create(modelClass: Class<T>): T {
+                return RutasPopularesViewModel(rutaRepository) as T
+            }
+        }
+    )
 
-            ) {
-                Column {
+    val rutas by viewModel.rutas.collectAsState(initial = emptyList())
+    val isLoading by viewModel.isLoading.collectAsState(true)
 
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.SpaceBetween
-                    ) {
+    LaunchedEffect(Unit) {
+        viewModel.loadRutas()
+    }
 
-                        IconButton(
-                            onClick = {
-                                onBack()
-                            },
-                            modifier = Modifier
-                                .size(48.dp)
-                                .clip(RoundedCornerShape(12.dp))
-                                .background(blur)
-
-                        ) {
-                            Icon(
-                                Icons.Default.ArrowBack,
-                                contentDescription = "Arrow back",
-                                tint = Color.White
-                            )
-                        }
-                        IconButton(
-                            onClick = {},
-                            modifier = Modifier
-                                .size(48.dp)
-                                .clip(RoundedCornerShape(12.dp))
-                                .background(blur)
-
-                        ) {
-                            Icon(//variable para indicar si es agregada a favoritas o no
-                                Icons.Default.Favorite,
-                                contentDescription = "favorite",
-                                tint = Color.White
-                            )
-                        }
-                    }
-
-                    Spacer(modifier = Modifier.height(20.dp))
-
-                    Text(
-                        text = "Ruta 5",
-                        fontSize = 15.sp,
-                        color = Color.White,
-                        fontWeight = FontWeight.SemiBold,
-                        modifier = Modifier
-                            .clip(RoundedCornerShape(15.dp))
-                            .background(blur)
-                            .padding(10.dp)
-                    )
-
-                    Spacer(modifier = Modifier.height(20.dp))
-
-                    Text(
-                        text = "Centro Historico - Terminal",
-                        fontSize = 28.sp,
-                        color = Color.White,
-                        fontWeight = FontWeight.SemiBold
-
-                    )
-
-                    Spacer(modifier = Modifier.height(20.dp))
-
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(
-                            Icons.Default.Schedule,
-                            contentDescription = "Icono reloj",
-                            tint = Color.White,
-                            modifier = Modifier
-                                .size(18.dp)
-                        )
-
-                        Spacer(modifier = Modifier.width(8.dp))
-
-                        Text(
-                            text = "45 min",
-                            fontSize = 18.sp,
-                            color = Color.White
-                        )
-
-                        Spacer(modifier = Modifier.width(25.dp))
-
-                        Icon(
-                            Icons.Default.LocationOn,
-                            contentDescription = "Location",
-                            tint = Color.White,
-                            modifier = Modifier
-                                .size(18.dp)
-                        )
-
-                        Spacer(modifier = Modifier.width(8.dp))
-
-                        Text(
-                            text = "10 Paradas",
-                            fontSize = 18.sp,
-                            color = Color.White
-                        )
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("Rutas Populares") },
+                navigationIcon = {
+                    IconButton(onClick = onBack) {
+                        Icon(Icons.Default.ArrowBack, contentDescription = "Regresar")
                     }
                 }
-            }
-
-            Spacer(modifier = Modifier
-                .height(50.dp)
             )
-
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Color.White)
-                    .wrapContentHeight()
-                    .padding(5.dp)
-            ) {
-                Spacer(modifier = Modifier
-                .padding(top = 50.dp)
-                )
-                Column() {
-                    ItemParadas()
-                    Spacer(modifier = Modifier
-                        .height(10.dp)
-                    )
-                    ItemParadas()
+        }
+    ) { paddingValues ->
+        when {
+            isLoading -> {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(paddingValues),
+                    contentAlignment = Alignment.Center
+                ) {
+                    CircularProgressIndicator()
                 }
-
-
             }
-
+            rutas.isEmpty() -> {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(paddingValues),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text("No hay rutas disponibles")
+                }
+            }
+            else -> {
+                LazyColumn(
+                    modifier = Modifier.padding(paddingValues),
+                    contentPadding = PaddingValues(16.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    items(rutas) { ruta ->
+                        Card(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clickable { onRutaClick(ruta.idRuta) },
+                            elevation = CardDefaults.cardElevation(4.dp)
+                        ) {
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(16.dp),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Column {
+                                    Text(
+                                        text = ruta.nombreRuta,
+                                        fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                                        fontSize = 18.sp
+                                    )
+                                    Text(
+                                        text = "Paradas: ${ruta.totalParadas}",
+                                        fontSize = 14.sp,
+                                        color = androidx.compose.ui.graphics.Color.Gray
+                                    )
+                                }
+                                Icon(Icons.Default.NavigateNext, contentDescription = "Ver detalles")
+                            }
+                        }
+                    }
+                }
+            }
         }
-        Box(
-            modifier = Modifier
-                .align(Alignment.TopCenter)
-                .padding(top = 230.dp)
-                .padding(horizontal = 15.dp)
-
-        ){
-            ProximoBus()
-        }
-
     }
 }
